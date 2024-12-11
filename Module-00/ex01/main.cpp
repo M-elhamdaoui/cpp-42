@@ -6,27 +6,29 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:49:33 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/11 15:19:09 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/11 19:48:39 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "PhoneBook.hpp"
+
+void	showCommands()
+{
+	std::cout << "Hi and welcome to my phone book" << std::endl;
+	std::cout << "Commands : ADD , SEARCH , EXIT" << std::endl;
+}
 
 int main()
 {
-	Contact one;
-	std::string	input;
+	PhoneBook myPhoneBook;
+	std::string input;
 
-	// std::cout << "|" << std::setw(10) << "Firstnamejumjmjumjmu" ;
-	// std::cout << "|" << std::setw(10) << "Firstname" ;
-	// std::cout << "|" << std::setw(10) << "Firstname" << "|";
-	getline(std::cin, input);
-	one.setFirstName(input);
-	one.setLastName("EL Hamdaoui");
-	one.setIndex(0);
-	one.setNickname("Voop");
-	one.setDarkestSecret("I am good");
-	one.setPhoneNumber("0648043465");
-	one.shortDisplay();
-	one.detailsDisplay();
+	while (1)
+	{
+		showCommands();
+		getline(std::cin ,input);
+		if (input == "ADD")
+			myPhoneBook.addContact();
+		if (input == "SEARCH")
+	}
 }
