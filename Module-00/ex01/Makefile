@@ -6,7 +6,7 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/11 11:11:19 by mel-hamd          #+#    #+#              #
-#    Updated: 2024/12/11 11:27:03 by mel-hamd         ###   ########.fr        #
+#    Updated: 2024/12/11 14:14:50 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
 headers	=	Contact.hpp
 
-srcs	=	Contact.cpp
+srcs	=	Contact.cpp main.cpp
 
 objs	=	$(srcs:.cpp=.o)
 

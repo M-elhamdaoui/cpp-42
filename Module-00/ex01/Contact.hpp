@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:11:09 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/11 13:43:34 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/11 14:06:28 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define CONTACT_HPP
 
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 class Contact
 {
