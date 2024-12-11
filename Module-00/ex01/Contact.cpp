@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:11:06 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/11 12:37:58 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/11 13:44:04 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,19 @@ void Contact::setPhoneNumber(std::string phoneNumber)
 void Contact::setDarkestSecret(std::string darkestSecret)
 {
 	this->darkestSecret = darkestSecret;
+}
+
+void Contact::setIndex(int index)
+{
+	this->index = index;
+}
+
+void Contact::shortDisplay()
+{
+	
+}
+
+void Contact::detailsDisplay()
+{
+	
 }

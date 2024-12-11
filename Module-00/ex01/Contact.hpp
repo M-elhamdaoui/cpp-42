@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:11:09 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/11 11:52:45 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/11 13:43:34 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ private:
 	std::string nickname;
 	std::string phoneNumber;
 	std::string darkestSecret;
+	int			index;
 
 public:
 	void setFirstName(std::string firstName);
@@ -30,8 +31,9 @@ public:
 	void setNickname(std::string nickname);
 	void setPhoneNumber(std::string PhoneNumber);
 	void setDarkestSecret(std::string DarkesetSecret);
+	void setIndex(int index);
 	void shortDisplay();
-	void detailsDesplay();
+	void detailsDisplay();
 };
 
 #endif
