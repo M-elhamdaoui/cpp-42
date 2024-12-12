@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:11:06 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/11 19:46:09 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/12 10:45:40 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,19 @@ void Contact::setIndex(int index)
 
 void Contact::shortDisplay()
 {
+	std::cout << std::right;
 	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << this->index;
+	std::cout << "|";
+	std::cout << std::setw(10);
 	printTenChars(this->firsrName);
 	std::cout << "|";
 	std::cout << std::setw(10);
 	printTenChars(this->lastName);
 	std::cout << "|";
 	std::cout << std::setw(10);
-	printTenChars(this->darkestSecret);
+	printTenChars(this->nickname);
 	std::cout << "|" << std::endl;
 }
 
