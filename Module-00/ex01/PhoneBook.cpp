@@ -6,14 +6,14 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:29:04 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/12 11:21:44 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/12 19:04:22 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 int PhoneBook::offset = 0;
-int PhoneBook::full	  = flase;
+bool PhoneBook::full	  = false;
 
 int	checkValidNumber(std::string number)
 {

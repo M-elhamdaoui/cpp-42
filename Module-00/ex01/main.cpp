@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:49:33 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/12 11:19:45 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/12 19:04:09 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
 		if (input == "SEARCH")
 		{
 			myPhoneBook.listContacts();
-			if (myPhoneBook:: > 0)
+			if (1)
 			{
 				getline(std::cin, input);
 				id = atoi(input.c_str());
