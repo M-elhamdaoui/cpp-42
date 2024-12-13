@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:29:04 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/13 11:01:40 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/13 11:30:40 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,9 +164,37 @@ void PhoneBook::addContact()
 
 void PhoneBook::listContacts()
 {
-	int	i;
+	int	i, j;
 
 	i = 0;
+	j = 0;
+	while (j < 45)
+	{
+		std::cout << "-";
+		j++;
+	}
+	std::cout << std::endl;
+	std::cout << std::right;
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << "index";
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << "first name";
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << "last name";
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << "nickname";
+	std::cout << "|" << std::endl;
+	j = 0;
+	while (j < 45)
+	{
+		std::cout << "-";
+		j++;
+	}
+	std::cout << std::endl;
 	while (i < PhoneBook::size)
 	{
 		this->contacts[i].shortDisplay();

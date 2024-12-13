@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:11:06 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/12 10:45:40 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/13 11:29:03 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void Contact::setIndex(int index)
 
 void Contact::shortDisplay()
 {
+	int i;
+	i = 0;
 	std::cout << std::right;
 	std::cout << "|";
 	std::cout << std::setw(10);
@@ -77,6 +79,12 @@ void Contact::shortDisplay()
 	std::cout << std::setw(10);
 	printTenChars(this->nickname);
 	std::cout << "|" << std::endl;
+	while (i < 45)
+	{
+		std::cout << "-";
+		i++;
+	}
+	std::cout << std::endl;
 }
 
 void Contact::detailsDisplay()

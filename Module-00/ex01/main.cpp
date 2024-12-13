@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:49:33 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/13 10:44:38 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/13 11:33:56 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int main()
 		if (input == "SEARCH")
 		{
 			myPhoneBook.listContacts();
+			std::cout << "Enter index that you want to show details about or any key to leave the prompt !" << std::endl;
 			if (getline(std::cin, input).eof() || input == "EXIT")
 				exit(0);
 			id = atoi(input.c_str());
