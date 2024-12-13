@@ -6,14 +6,30 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:29:04 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/12 19:04:22 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/13 11:01:40 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 int PhoneBook::offset = 0;
-bool PhoneBook::full	  = false;
+int PhoneBook::size	  = 0;
+
+bool checkVlidInput(std::string input)
+{
+	int	i;
+
+	i = 0; 
+	if (input.empty())
+		return (0);
+	while (input[i] != '\0')
+	{
+		if (input[i] < 32 || input[i] > 126)
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 int	checkValidNumber(std::string number)
 {
@@ -33,42 +49,117 @@ int	checkValidNumber(std::string number)
 	return (1);
 }
 
+void PhoneBook::insertFirstName()
+{
+	std::string input;
+	
+	while (1)
+	{
+		std::cout << std::left << std::setw(15) << "First Name" << " : ";
+		if (getline(std::cin, input).eof() || input == "EXIT")
+			exit(0);
+		if (checkVlidInput(input))
+		{
+			this->contacts[PhoneBook::offset].setFirstName(input);
+			break;
+		}
+		std::cout << "Its not valid first name !" << std::endl;
+	}
+}
+
+void PhoneBook::insertLastName()
+{
+	std::string input;
+	
+	while (1)
+	{
+		std::cout << std::left << std::setw(15) << "Last Name" << " : ";
+		if (getline(std::cin, input).eof() || input == "EXIT")
+			exit(0);
+		if (checkVlidInput(input))
+		{
+			this->contacts[PhoneBook::offset].setLastName(input);
+			break;
+		}
+		std::cout << "Its not valid last name !" << std::endl;
+	}
+}
+
+void PhoneBook::insertNickname()
+{
+	std::string input;
+
+	while (1)
+	{
+		std::cout << std::left << std::setw(15) << "Nickname" << " : ";
+		if (getline(std::cin, input).eof() || input == "EXIT")
+			exit(0);
+		if (checkVlidInput(input))
+		{
+			this->contacts[PhoneBook::offset].setNickname(input);
+			break;
+		}
+		std::cout << "Its not valid nickname !" << std::endl;
+	}
+}
+
+void PhoneBook::insertPhoneNumber()
+{
+	std::string input;
+
+	while (1)
+	{
+		std::cout << std::left << std::setw(15) << "Phone number" << " : ";
+		if (getline(std::cin, input).eof() || input == "EXIT")
+			exit(0);
+		if (checkVlidInput(input) && checkValidNumber(input))
+		{
+			this->contacts[PhoneBook::offset].setPhoneNumber(input);
+			break;
+		}
+		std::cout << "Not valid number !" << std::endl;
+	}
+}
+
+void PhoneBook::insertDarkSecret()
+{
+	std::string input;
+
+	while (1)
+	{
+		std::cout << std::left << std::setw(15) << "Dark secret" << " : ";
+		if (getline(std::cin, input).eof() || input == "EXIT")
+			exit(0);
+		if (checkVlidInput(input))
+		{
+			this->contacts[PhoneBook::offset].setDarkestSecret(input);
+			break;
+		}
+		std::cout << "Not valid dark secret !" << std::endl;
+	}
+	
+}
+
 void PhoneBook::addContact()
 {
 	std::string input;
 
 	this->contacts[PhoneBook::offset].setIndex(PhoneBook::offset);
-	std::cout << std::left << std::setw(15) << "First Name" << " : ";
-	getline(std::cin, input);
-	this->contacts[PhoneBook::offset].setFirstName(input);
-	
-	std::cout << std::left << std::setw(15) << "Last Name" << " : ";
-	getline(std::cin, input);
-	this->contacts[PhoneBook::offset].setLastName(input);
-
-	std::cout << std::left << std::setw(15) << "Nickname" << " : ";
-	getline(std::cin, input);
-	this->contacts[PhoneBook::offset].setNickname(input);
-
-	while (1)
-	{
-		std::cout << std::left << std::setw(15) << "Phone number" << " : ";
-		getline(std::cin, input);
-		if (checkValidNumber(input))
-			break;
-		else
-			continue;
-	}
-	this->contacts[PhoneBook::offset].setPhoneNumber(input);
-
-	std::cout << std::left << std::setw(15) << "Dark secret" << " : ";
-	getline(std::cin, input);
-	this->contacts[PhoneBook::offset].setDarkestSecret(input);
+	this->insertFirstName();
+	this->insertLastName();
+	this->insertNickname();
+	this->insertPhoneNumber();
+	this->insertDarkSecret();
 	std::cout << "The phone number has been created !" << std::endl;
+	
 	if (PhoneBook::offset + 1 == 8)
 		PhoneBook::offset = 0;
 	else
 		PhoneBook::offset++;
+	if (PhoneBook::size + 1 > 8)
+		PhoneBook::size = 8;
+	else
+		PhoneBook::size += 1;
 }
 
 void PhoneBook::listContacts()
@@ -76,7 +167,7 @@ void PhoneBook::listContacts()
 	int	i;
 
 	i = 0;
-	while ((i < PhoneBook::offset && PhoneBook::offset <= 8) && i <  8)
+	while (i < PhoneBook::size)
 	{
 		this->contacts[i].shortDisplay();
 		i++;
@@ -85,6 +176,6 @@ void PhoneBook::listContacts()
 
 void PhoneBook::showContact(int i)
 {
-	if ((i < PhoneBook::offset && PhoneBook::offset <= 8) && i < 8)
+	if (i < PhoneBook::size)
 		this->contacts[i].detailsDisplay();
 }

@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:49:33 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/12 19:04:09 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/13 10:44:38 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,19 @@ int main()
 	{
 		showCommands();
 		std::cout << "Command : ";
-		getline(std::cin ,input);
+		if (getline(std::cin, input).eof() || input == "EXIT")
+			exit(0);
 		if (input == "ADD")
 			myPhoneBook.addContact();
 		if (input == "SEARCH")
 		{
 			myPhoneBook.listContacts();
-			if (1)
-			{
-				getline(std::cin, input);
-				id = atoi(input.c_str());
-				if (id < 0 || id > 7)
-					continue ;
-				myPhoneBook.showContact(id);	
-			}
+			if (getline(std::cin, input).eof() || input == "EXIT")
+				exit(0);
+			id = atoi(input.c_str());
+			if ((input.size() != 1 || !isdigit(input[0])) || (id < 0 || id > 7))
+				continue ;
+			myPhoneBook.showContact(id);	
 		}
 	}
 }
