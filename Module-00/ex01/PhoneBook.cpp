@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:29:04 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/13 11:30:40 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/14 10:03:56 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,12 @@ int	checkValidNumber(std::string number)
 		return (0);
 	}
 	i = 1;
-	while (isdigit(number[i]))
+	while (number[i])
+	{
+		if (!isdigit(number[i]))
+			return (0);
 		i++;
+	}
 	if (i < 10)
 	{
 		return (0);
