@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:29:04 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/14 10:03:56 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/14 12:14:55 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void PhoneBook::insertFirstName()
 	while (1)
 	{
 		std::cout << std::left << std::setw(15) << "First Name" << " : ";
-		if (getline(std::cin, input).eof() || input == "EXIT")
+		if (getline(std::cin, input).eof() )
 			exit(0);
 		if (checkVlidInput(input))
 		{
@@ -78,7 +78,7 @@ void PhoneBook::insertLastName()
 	while (1)
 	{
 		std::cout << std::left << std::setw(15) << "Last Name" << " : ";
-		if (getline(std::cin, input).eof() || input == "EXIT")
+		if (getline(std::cin, input).eof() )
 			exit(0);
 		if (checkVlidInput(input))
 		{
@@ -96,7 +96,7 @@ void PhoneBook::insertNickname()
 	while (1)
 	{
 		std::cout << std::left << std::setw(15) << "Nickname" << " : ";
-		if (getline(std::cin, input).eof() || input == "EXIT")
+		if (getline(std::cin, input).eof() )
 			exit(0);
 		if (checkVlidInput(input))
 		{
@@ -114,7 +114,7 @@ void PhoneBook::insertPhoneNumber()
 	while (1)
 	{
 		std::cout << std::left << std::setw(15) << "Phone number" << " : ";
-		if (getline(std::cin, input).eof() || input == "EXIT")
+		if (getline(std::cin, input).eof())
 			exit(0);
 		if (checkVlidInput(input) && checkValidNumber(input))
 		{
@@ -132,7 +132,7 @@ void PhoneBook::insertDarkSecret()
 	while (1)
 	{
 		std::cout << std::left << std::setw(15) << "Dark secret" << " : ";
-		if (getline(std::cin, input).eof() || input == "EXIT")
+		if (getline(std::cin, input).eof() )
 			exit(0);
 		if (checkVlidInput(input))
 		{
