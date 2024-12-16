@@ -6,7 +6,7 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/16 12:37:38 by mel-hamd          #+#    #+#              #
-#    Updated: 2024/12/16 13:25:46 by mel-hamd         ###   ########.fr        #
+#    Updated: 2024/12/16 14:14:02 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ name	= name
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-headers	=
+headers	= Weapon.hpp HumanA.hpp HumanB.hpp
 
-srcs 	=
+srcs 	= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 objs	= $(srcs:.cpp=.o)
 
