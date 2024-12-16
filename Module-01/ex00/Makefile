@@ -6,15 +6,15 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/15 14:57:54 by mel-hamd          #+#    #+#              #
-#    Updated: 2024/12/15 15:10:34 by mel-hamd         ###   ########.fr        #
+#    Updated: 2024/12/16 10:38:48 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-name	=	
+name	=	zombie
 CC		=	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
-headers	=	
+headers	=	Zombie.hpp
 
 srcs	=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
@@ -22,7 +22,7 @@ objs	=	$(srcs:.cpp=.o)
 
 all		:	$(name)
 
-$(name)	:	$(objs) $(headers)
+$(name)	:	$(objs) 
 		$(CC) $(CFLAGS) $(objs) -o $(name)
 
 %.o		:	%.cpp $(headers)

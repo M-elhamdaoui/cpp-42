@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:50:13 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/16 10:09:06 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/16 10:38:31 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include <iostream>
 
 class Zombie {
-	private :
+	private:
 		std::string name;
-	public :
+	public:
 		Zombie(std::string name);
 		~Zombie(void);
 		void announce(void);
