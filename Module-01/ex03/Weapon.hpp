@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 14:14:16 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/16 14:29:58 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:49:48 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 
 #include <iostream>
 
-class Weapon {
-	private:
-		std::string type;
-	public:
-		Weapon(std::string type);
-		const std::string&	getType(void) const;
-		void 			setType(std::string type);
+class Weapon
+{
+private:
+	std::string type;
+
+public:
+	Weapon(std::string type);
+	const std::string &getType(void);
+	void setType(std::string type);
 };
 
 #endif
