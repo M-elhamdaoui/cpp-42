@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 10:47:20 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/21 11:35:17 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/21 16:47:17 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 #define TRANSFER_HPP
 
 #include <iostream>
+#include <fstream>
 
-class TRANSFER {
+class Transfer {
     private :
         std::string inputFile;
-        std::string outputFile;
+        std::string s1;
+		 std::string s2;
     public :
-        TRANSFER(std::string inputFile, std::string outputFile);
+        Transfer(std::string inputFile, std::string s1, std::string s2);
         void transferData();
 };
 
