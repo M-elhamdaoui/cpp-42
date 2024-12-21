@@ -6,11 +6,12 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:29:04 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/14 12:14:55 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/21 09:59:57 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <cstdlib>
 
 int PhoneBook::offset = 0;
 int PhoneBook::size	  = 0;

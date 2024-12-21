@@ -6,12 +6,12 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:49:33 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/14 12:15:23 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/21 10:01:09 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-
+#include <cstdlib>
 void	showCommands()
 {
 	std::cout << "Commands : ADD , SEARCH , EXIT" << std::endl;
