@@ -6,12 +6,12 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 10:46:46 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/21 11:54:05 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/21 14:47:06 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include  "Input.hpp"
+#include  "Transfer.hpp"
 
 
 TRANSFER::TRANSFER(std::string inputFile, std::string outputFile)
