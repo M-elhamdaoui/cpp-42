@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:32:18 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/16 11:40:03 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/23 15:52:06 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ int main()
 	for(int i = 0; i < N; i++)
 	{
 		zombies[i].announce();
+	}
+
+	for  (int  i = 0; i< N ; i++)
+	{
+		delete zombies[i];
 	}
 	return (0);
 }
