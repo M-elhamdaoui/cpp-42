@@ -6,17 +6,17 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/23 10:48:37 by mel-hamd          #+#    #+#              #
-#    Updated: 2024/12/23 11:05:31 by mel-hamd         ###   ########.fr        #
+#    Updated: 2024/12/23 12:52:39 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-name	= 
+name	= Harl
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-headers	= 
+headers	= Harl.hpp
 
-srcs 	= main.cpp 
+srcs 	= main.cpp Harl.cpp
 
 objs	= $(srcs:.cpp=.o)
 
