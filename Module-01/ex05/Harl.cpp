@@ -6,25 +6,29 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 12:07:37 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/23 12:54:41 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/23 14:41:01 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 void Harl::debug(void){
+	std::cout << "[DEBUG]"<< std::endl;
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
 }
 
 void Harl::info(void){
+	std::cout << "[INFO]"<< std::endl;
 	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 }
 
 void Harl::warning(void){
+	std::cout << "[WARNING]"<< std::endl;
 	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month" << std::endl;
 }
 
 void Harl::error(void){
+	std::cout << "[ERROR]"<< std::endl;
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
@@ -42,4 +46,5 @@ void Harl::complain(std::string level){
 		}
 		i++;
 	}
+	std::cout << "Can not find level !" << std::endl;
 }
