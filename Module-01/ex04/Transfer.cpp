@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 10:46:46 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/24 14:08:54 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/24 14:50:39 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void    Transfer::transferData()
         size_t  found;
 
         pos = 0;
-        while ((found = line.find(this->s1, pos)) != std::string::npos)
+        while ((found = line.find(this->s1, pos)) != std::string::npos && s1.length() > 0)
         {
             res += line.substr(pos, found);
             res += this->s2;
