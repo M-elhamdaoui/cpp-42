@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 14:34:55 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/17 15:58:50 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/24 18:08:26 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 HumanB::HumanB(std::string name)
 {
 	this->name = name;
+	this->club = NULL;
 }
 
 void HumanB::setWeapon(Weapon &club)
