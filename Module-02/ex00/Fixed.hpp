@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:34:36 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/27 18:00:00 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/27 19:46:43 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ public:
 	Fixed(const Fixed &copy);
 	Fixed &operator=(const Fixed &copy);
 	~Fixed();
-	int getFixedValue() const;
+	int getRawBits() const;
+	void setRawBits( int const raw );
 };
 
 #endif
