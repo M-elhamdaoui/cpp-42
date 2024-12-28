@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 15:33:26 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/28 17:16:35 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/28 17:21:01 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ std::ostream& operator<<(std::ostream &out, const Fixed &fixed)
 }
 
 Fixed::Fixed(const int n){
+	std::cout << "Int constructor called"<<std::endl;
 	this->fixedValue = n << fractBites;
 }
 
 Fixed::Fixed(const float n)
 {
+	std::cout << "Float constructor called" << std::endl;
 	this->fixedValue  = roundf(n * (1 << fractBites));
 }
 
