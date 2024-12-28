@@ -6,13 +6,13 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:34:23 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/28 14:01:23 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/28 14:59:14 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-const int Fixed::fractBites = 8;
+const int Fixed::fractBites = 0;
 
 
 Fixed::Fixed() : fixedValue(0)
