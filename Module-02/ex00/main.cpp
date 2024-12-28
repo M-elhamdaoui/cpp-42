@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:33:59 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/27 22:14:49 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/28 14:02:25 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,15 @@
 
 int main() {
 	Fixed f1;
-	f1 = f1;
+	
+	Fixed f2 = f1;
+	
+	Fixed f3(f1);
+	
+	f2 = f3;
+	
+	f3.setRawBits(10);
+	std::cout<< f3.getRawBits() << std::endl;
+	
+	return (0);
 }
