@@ -6,11 +6,11 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/25 08:27:56 by mel-hamd          #+#    #+#              #
-#    Updated: 2024/12/27 22:15:31 by mel-hamd         ###   ########.fr        #
+#    Updated: 2024/12/28 15:26:19 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-name	= name
+name	= fixed
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
