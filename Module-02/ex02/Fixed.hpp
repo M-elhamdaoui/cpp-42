@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 17:44:14 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/28 17:46:08 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/29 22:16:58 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ public:
 	
 	int getRawBits() const;
 	void setRawBits( int const raw );
+
+	bool operator < (const Fixed op) const;
+	bool operator <= (const Fixed op) const;
+	bool operator > (const Fixed op) const;
+	bool operator >= (const Fixed op) const;
+	bool operator == (const Fixed op) const;
+	bool operator != (const Fixed op) const;
+	float  operator * (const Fixed op) ;
+	Fixed  operator / (const Fixed op) ;
 };
 
 std::ostream& operator<<(std::ostream &out, const Fixed &fixed);

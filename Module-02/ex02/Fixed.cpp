@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 17:44:06 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/28 17:56:01 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/29 22:16:44 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,46 @@ int Fixed::getRawBits() const
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called !" << std::endl;
+}
+
+//opertors
+
+bool Fixed::operator < (const Fixed op) const{
+	return (this->fixedValue < op.getRawBits());
+}
+
+bool Fixed::operator <= (const Fixed op) const{
+	return (this->fixedValue <= op.getRawBits());
+}
+
+
+bool Fixed::operator > (const Fixed op) const{
+	return (this->fixedValue > op.getRawBits());
+}
+bool Fixed::operator >= (const Fixed op) const{
+	return (this->fixedValue >= op.getRawBits());
+}
+
+
+bool Fixed::operator == (const Fixed op) const{
+	return (this->fixedValue == op.getRawBits());
+}
+bool Fixed::operator != (const Fixed op) const{
+	return (this->fixedValue != op.getRawBits());
+}
+
+float Fixed::operator * (const Fixed op)
+{
+	int res = (this->fixedValue * op.getRawBits()) >> fractBites;
+	Fixed r;
+	r.setRawBits(res);
+	return (r.toFloat());
+}
+
+Fixed Fixed::operator / (const Fixed op)
+{
+	int res = (this->fixedValue << fractBites) / op.getRawBits();
+	Fixed r;
+	r.setRawBits(res);
+	return (r);
 }
