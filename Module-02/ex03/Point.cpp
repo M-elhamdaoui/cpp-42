@@ -1,32 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/30 02:42:35 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/30 05:46:07 by mel-hamd         ###   ########.fr       */
+/*   Created: 2024/12/30 02:44:55 by mel-hamd          #+#    #+#             */
+/*   Updated: 2024/12/30 05:34:07 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Point.hpp"
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
 
-int main ()
+Point::Point() : x(0), y(0){
+	
+};
+
+Point::Point(const float x, const float y) : x(x), y(y){
+	
+}
+
+
+Point::Point(const Point &copy) : x(copy.getX()), y(copy.getY()) {
+	
+}
+
+Point& Point::operator = (const Point &copy)
 {
-	Point a(0, 9);
-	Point b(9, 0);
-	Point c(0, 0);
-	Point x(2, 2);
+	(Fixed)this->x = copy.x;
+	(Fixed)this->y = copy.x;
+	return (*this);
+}
 
-	bool res = bsp(a, b , c , x);
+Point::~Point()
+{
+	
+}
 
-	if (res)
-		std::cout << "The point x(" << x.getX() << ", " << x.getY() << ") is in the triangle !" << std::endl;
-	else
-		std::cout << "The point x(" << x.getX() << ", " << x.getY() << ") is not in the triangle !" << std::endl;	 
-	return (0);
+
+Fixed Point::getX() const
+{
+	return (this->x);
+}
+Fixed Point::getY() const
+{
+	return (this->y);
 }

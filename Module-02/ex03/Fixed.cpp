@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 02:42:29 by mel-hamd          #+#    #+#             */
-/*   Updated: 2024/12/30 02:42:47 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2024/12/30 04:54:11 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,18 +116,18 @@ bool Fixed::operator != (const Fixed op) const{
 
 Fixed Fixed::operator * (const Fixed op)
 {
-	int res = (this->fixedValue * op.getRawBits()) >> fractBites;
-	Fixed r;
-	r.setRawBits(res);
-	return (r);
+	Fixed res;
+	int r = (this->fixedValue * op.getRawBits()) >> fractBites;
+	res.setRawBits(r);
+	return (res);
 }
 
 Fixed Fixed::operator / (const Fixed op)
 {
-	int res = (this->fixedValue << fractBites) / op.getRawBits();
-	Fixed r;
-	r.setRawBits(res);
-	return (r);
+	Fixed res;
+	int r = (this->fixedValue << fractBites) / op.getRawBits();
+	res.setRawBits(r);
+	return (res);
 }
 
 Fixed  Fixed::operator + (const Fixed op)
@@ -136,7 +136,7 @@ Fixed  Fixed::operator + (const Fixed op)
 	int r;
 	r = this->fixedValue + op.getRawBits();
 	res.setRawBits(r);
-	return (r);
+	return (res);
 }
 
 Fixed  Fixed::operator - (const Fixed op)
@@ -145,7 +145,7 @@ Fixed  Fixed::operator - (const Fixed op)
 	int r;
 	r = this->fixedValue - op.getRawBits();
 	res.setRawBits(r);
-	return (r);
+	return (res);
 }
 
 Fixed &Fixed::operator -- ()
