@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 09:49:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/01 11:41:56 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/01 12:32:43 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 ClapTrap::ClapTrap() : name("Unknown"), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "Default constractor called !" << std::endl;
+	std::cout << "ClapTrap : Default constractor called !" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "Default parametraze constractor  called !" << std::endl;
+	std::cout << "ClapTrap : Parametraze constractor  called !" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 	this->attackDamage = copy.getAttackDamage();
 	this->energyPoints = copy.getEnergyPoints();
 	this->hitPoints = copy.getHitPoints();
-	std::cout << "Default copy constractor  called !" << std::endl;
+	std::cout << "ClapTrap : Copy constractor  called !" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator = (const ClapTrap &copy){
@@ -42,7 +42,7 @@ ClapTrap &ClapTrap::operator = (const ClapTrap &copy){
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destractor called !" << std::endl;
+	std::cout << "ClapTrap : Destractor called !" << std::endl;
 }
 
 std::string ClapTrap::getName() const {
