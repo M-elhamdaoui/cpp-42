@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 09:49:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/01 10:08:36 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/01 10:10:28 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ ClapTrap &ClapTrap::operator = (const ClapTrap &copy){
 	this->energyPoints = copy.getEnergyPoints();
 	this->hitPoints = copy.getHitPoints();
 	return (*this);
+}
+
+ClapTrap::~ClapTrap()
+{
+	std::cout << "Destractor called !" << std::endl;
 }
 
 std::string ClapTrap::getName() const {
