@@ -6,19 +6,19 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 09:49:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/01 11:05:15 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/01 11:41:56 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap() : name(""), hitPoints(10), energyPoints(10), attackDamage(10)
+ClapTrap::ClapTrap() : name("Unknown"), hitPoints(10), energyPoints(10), attackDamage(0)
 {
 	std::cout << "Default constractor called !" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(10)
+ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
 	std::cout << "Default parametraze constractor  called !" << std::endl;
 }
@@ -61,6 +61,14 @@ int ClapTrap::getAttackDamage() const {
 	return (this->attackDamage);
 }
 
+void	ClapTrap::setName(std::string name) {
+	this->name = name;
+}
+
+void		ClapTrap::printDetails() const
+{
+	std::cout << this->name << ":: hit points : " << this->hitPoints << ", energy points : " << this->energyPoints<< ", attack damage :" << this->attackDamage  << std::endl;
+}
 
 void	ClapTrap::attack(const std:: string& target) {
 	if (this->energyPoints == 0)
@@ -83,7 +91,6 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	if (this->hitPoints < 0)
 		this->hitPoints = 0;
 	std::cout << this->name << " got damaged "  << " by " << amount << " point of damage !" << std::endl;
-	this->hitPoints -= amount;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
@@ -98,7 +105,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << this->name << " has no hit points !" << std::endl;
 		return ;
 	}
-	std::cout << this->name << "'s hit points : " << this->hitPoints << " repaire to be " << this->hitPoints + amount << "has been completed !" << std::endl;
+	std::cout << this->name << "'s hit points : " << this->hitPoints << " repaire to be " << this->hitPoints + amount << " has been completed !" << std::endl;
 	this->hitPoints += amount;
 	this->energyPoints--;
 }

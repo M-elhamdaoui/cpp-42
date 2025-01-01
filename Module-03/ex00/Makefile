@@ -6,15 +6,15 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 21:24:03 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/01/01 11:12:18 by mel-hamd         ###   ########.fr        #
+#    Updated: 2025/01/01 11:38:31 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 name	= claptrap
 
-CC  	= c++;
+CC  	= c++
 
-CFLAGS	= -Werror -Wextra -Wall -std=c++98
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 headers	= ClapTrap.hpp
 
@@ -29,7 +29,7 @@ all	: $(name)
 $(name) : $(objs)
 		$(CC) $(CFLAGS) $(objs) -o $(name)
 
-%.o		: %.c $(headers)
+%.o	: %.cpp $(headers)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
