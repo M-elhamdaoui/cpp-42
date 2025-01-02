@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 11:53:23 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/01 15:11:24 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/02 21:34:33 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ScavTrap : public ClapTrap {
 		~ScavTrap();
 		ScavTrap &operator = (const ScavTrap &copy);
 
-		void	attack(const std:: string& target);
+		void	attack(const std::string& target);
 		void guardGate();
 };
 
