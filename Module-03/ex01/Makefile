@@ -6,11 +6,11 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 21:24:09 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/01/01 11:53:51 by mel-hamd         ###   ########.fr        #
+#    Updated: 2025/01/02 22:01:06 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-name	= claptrap
+name	= scavtrap
 
 CC  	= c++
 
