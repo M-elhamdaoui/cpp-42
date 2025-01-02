@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 09:49:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/01 11:41:56 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/02 22:00:12 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ClapTrap::setName(std::string name) {
 
 void		ClapTrap::printDetails() const
 {
-	std::cout << this->name << ":: hit points : " << this->hitPoints << ", energy points : " << this->energyPoints<< ", attack damage :" << this->attackDamage  << std::endl;
+	std::cout << this->name << ":: hit points : " << this->hitPoints << ", energy points : " << this->energyPoints<< ", attack damage : " << this->attackDamage  << std::endl;
 }
 
 void	ClapTrap::attack(const std:: string& target) {
