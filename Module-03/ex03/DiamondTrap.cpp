@@ -6,13 +6,14 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 05:03:09 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/06 06:15:47 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/06 08:25:14 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() {
+	ClapTrap::name = "default_clap_name";
 	this->name = "default";
 	if (this->hitPoints != 100)
 		this->hitPoints = 100;
