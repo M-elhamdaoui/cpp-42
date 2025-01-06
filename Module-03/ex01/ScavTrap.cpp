@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 11:53:36 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/02 22:10:22 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/06 09:23:57 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,14 @@ ScavTrap &ScavTrap::operator = (const ScavTrap &copy){
 
 void	ScavTrap::attack(const std:: string& target) {
 
-	if (this->energyPoints == 0)
-	{
-		std::cout << this->name << " has no energy points !" << std::endl;
-		return ;
-	}
 	if (this->hitPoints == 0)
 	{
 		std::cout << this->name << " has no hit points !" << std::endl;
+		return ;
+	}
+	if (this->energyPoints == 0)
+	{
+		std::cout << this->name << " has no energy points !" << std::endl;
 		return ;
 	}
 	std::cout << "ScavTrap : "<< this->name << " attacks " << target << ", causing " << this->attackDamage << " point of damage !" << std::endl;
@@ -69,5 +69,6 @@ void	ScavTrap::attack(const std:: string& target) {
 }
 
 void ScavTrap::guardGate() {
-	std::cout << "ScavTrap : " << this->name << " is now in Gate keeper mode !" << std::endl;
+	if (this->hitPoints)
+		std::cout << "ScavTrap : " << this->name << " is now in Gate keeper mode !" << std::endl;
 }
