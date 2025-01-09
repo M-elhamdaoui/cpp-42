@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 09:04:46 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/09 10:17:50 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:50:14 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 #define Dog_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal{
+	
+	private :
+		Brain *brain;
 
 	public :
 		Dog();
@@ -25,6 +29,7 @@ class Dog : public Animal{
 		~Dog();
 
 		void makeSound() const;
+		Brain* getBrain() const;
 };
 
 #endif

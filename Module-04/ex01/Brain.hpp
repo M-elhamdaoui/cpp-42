@@ -6,11 +6,11 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:46:26 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/09 14:07:05 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:57:25 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN._PP
+#ifndef BRAIN_HPP
 #define BRAIN_HPP
 
 #include <iostream>

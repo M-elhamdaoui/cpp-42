@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 09:05:21 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/09 14:08:18 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:48:18 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ Cat::Cat() : Animal("Cat") {
 }
 
 
-
-Cat::Cat(const Cat &copy) {
+Cat::Cat(const Cat &copy) : Animal(copy) {
 	std::cout << "Cat : Copy constartor " << std::endl;
 	*this = copy;
 }
@@ -37,8 +36,8 @@ Cat& Cat::operator=(const Cat &copy) {
 }
 
 Cat::~Cat() {
-	delete this->brain;
 	std::cout << "Cat : destractor called !" << std::endl;
+	delete this->brain;
 }
 
 void Cat::makeSound() const {
