@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 16:22:09 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/10 17:25:30 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/10 19:00:33 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 MateriaSource::MateriaSource()
 {
-	std::cout << "MateriaSource : Default constractor" << std::endl;
+
 	for (int i = 0; i < 4; i++)
 	{
 		this->learnedMateria[i] = NULL;
@@ -23,7 +23,7 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource &copy)
 {
-	std::cout << "MateriaSource : copy constractor" << std::endl;
+
 	for (int i = 0; i < 4; i++)
 	{
 		this->learnedMateria[i] = NULL;
@@ -33,7 +33,7 @@ MateriaSource::MateriaSource(const MateriaSource &copy)
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 {
-	std::cout << "MateriaSource : copy assignment operator" << std::endl;
+
 	if (this != &copy)
 	{
 		for (int i = 0; i < 4; i++)
@@ -51,7 +51,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 
 MateriaSource::~MateriaSource()
 {
-	std::cout << "MateriaSource : destractor" << std::endl;
+
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->learnedMateria[i])

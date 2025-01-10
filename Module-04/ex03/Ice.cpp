@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 16:45:06 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/10 17:27:33 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/10 19:01:20 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 Ice::Ice() : AMateria("ice")
 {
-	std::cout << "Ice : defult constactor " << std::endl;
 }
 
 Ice::Ice(const Ice &copy) : AMateria("ice")
 {
-	std::cout << "Ice : Copy constractor" << std::endl;
+
 	*this = copy;
 }
 
 Ice &Ice::operator=(const Ice &copy)
 {
-	std::cout << "Ice : copy assignment operator" << std::endl;
+
 	if (this != &copy)
 		return (*this);
 	return (*this);
@@ -33,7 +32,6 @@ Ice &Ice::operator=(const Ice &copy)
 
 Ice::~Ice()
 {
-	std::cout << "Ice : destractor" << std::endl;
 }
 
 AMateria *Ice::clone() const
