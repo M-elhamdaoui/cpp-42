@@ -6,7 +6,7 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/09 16:26:00 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/01/09 16:28:17 by mel-hamd         ###   ########.fr        #
+#    Updated: 2025/01/10 16:18:54 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ CC  	= c++
 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-headers	= 
+headers	= AMateria.hpp Cure.hpp Ice.hpp ICharacter.hpp Character.hpp
 
-srcs	= 
+srcs	= main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp 
 
 objs	=  $(srcs:.cpp=.o)
 
