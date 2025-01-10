@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 16:45:06 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/10 09:36:32 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/10 09:49:08 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,14 @@ Ice::Ice() : AMateria("ice")
 	std::cout << "Ice : defult constactor " << std::endl;
 }
 
-Ice::Ice(const Ice &copy)
+Ice::Ice(const Ice &copy) : AMateria("ice")
 {
 	std::cout << "Ice : Copy constractor" << std::endl;
-	*this = copy;
 }
 
 Ice &Ice::operator=(const Ice &copy)
 {
 	std::cout << "Ice : copy assignment operator" << std::endl;
-	if (this != &copy)
-	{
-		this->type = copy.getType();
-	}
 	return (*this);
 }
 
