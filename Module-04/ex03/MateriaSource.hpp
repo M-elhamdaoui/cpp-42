@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/10 16:19:01 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/10 16:21:15 by mel-hamd         ###   ########.fr       */
+/*   Created: 2025/01/10 16:22:03 by mel-hamd          #+#    #+#             */
+/*   Updated: 2025/01/10 17:09:31 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_HPP
-#define IMATERIASOURCE_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
+#include "IMateriaSource.hpp"
 #include "AMateria.hpp"
 
-class IMateriaSource
+class MateriaSource : public IMateriaSource
 {
+private:
+	AMateria *learnedMateria[4];
+
 public:
-	virtual ~IMateriaSource() {}
-	virtual void learnMateria(AMateria *) = 0;
-	virtual AMateria *createMateria(std::string const &type) = 0;
+	MateriaSource();
+	MateriaSource(const MateriaSource &copy);
+	~MateriaSource();
+	MateriaSource &operator=(const MateriaSource &copy);
+
+	void learnMateria(AMateria *);
+	AMateria *createMateria(std::string const &type);
+	AMateria *getLearnedMateria(int i) const;
 };
 
 #endif

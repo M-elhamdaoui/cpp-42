@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 10:33:01 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/10 15:43:19 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/10 17:31:57 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character : public ICharacter
 {

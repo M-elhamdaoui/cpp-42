@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 09:40:33 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/10 10:30:28 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/10 17:30:05 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,14 @@ Cure::Cure() : AMateria("cure")
 Cure::Cure(const Cure &copy) : AMateria("cure")
 {
 	std::cout << "Cure : Copy constractor" << std::endl;
+	*this = copy;
 }
 
 Cure &Cure::operator=(const Cure &copy)
 {
 	std::cout << "Cure : copy assignment operator" << std::endl;
+	if (this != &copy)
+		return (*this);
 	return (*this);
 }
 

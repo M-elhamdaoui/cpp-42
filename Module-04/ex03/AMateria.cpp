@@ -6,11 +6,12 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 16:30:10 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/10 08:28:20 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/10 17:24:31 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 AMateria::AMateria() : type("")
 {

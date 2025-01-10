@@ -6,11 +6,14 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 16:11:55 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/01/10 16:12:37 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/01/10 17:09:04 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "MateriaSource.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
 
 int main()
 {
