@@ -4,9 +4,9 @@ CC  	= c++
 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-headers	= 
+headers	= Bureaucrat.hpp
 
-srcs	= 
+srcs	=  main.cpp Bureaucrat.cpp
 
 objs	=  $(srcs:.cpp=.o)
 
