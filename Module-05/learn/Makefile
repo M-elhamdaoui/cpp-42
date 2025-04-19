@@ -6,21 +6,21 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/19 06:03:41 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/04/19 06:08:37 by mel-hamd         ###   ########.fr        #
+#    Updated: 2025/04/19 07:06:46 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 name	= learn
 
-CC		= c++;
+CC		= c++
 
-CFLAGS	=-Wall -Wextra -Werror -std=c++98
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 headers = Rectangle.hpp
 
-srcs	= Rectangle.cpp
+srcs	= Rectangle.cpp main.cpp
 
-objs	= ${srcs:.cpp=.o}
+objs	= $(srcs:.cpp=.o)
 
 
 all : ${name}
