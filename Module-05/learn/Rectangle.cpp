@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 06:03:27 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/19 06:58:39 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/19 07:10:56 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,13 @@ int Rectangle::getHeight() const {
 
 
 void Rectangle::setWidth(int width) {
+	if (width < 0)
+		throw std::invalid_argument("You cannot insert a negative value in width !");
 	this->width = width;
 }
 
 void Rectangle::setHeight(int height) {
+	if (width < 0)
+		throw std::invalid_argument("You cannot insert a negative value in height !");
 	this->height = height;
 }
