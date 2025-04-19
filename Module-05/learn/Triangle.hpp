@@ -6,11 +6,12 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 08:15:30 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/19 09:51:45 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/19 13:46:29 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <exception>
 #include <array>
 
 class Triangle {
@@ -31,5 +32,13 @@ class Triangle {
 		void setA(int x, int y);
 		void setB(int x, int y);
 		void setC(int x, int y);
+
+		class NotAllowedValues  : public std::exception {
+			public :
+				const char* what() const throw() {
+					return ("Not valid");
+				}
+			
+		};
 
 };

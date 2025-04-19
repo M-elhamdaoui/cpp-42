@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 10:04:11 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/19 10:31:26 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/19 13:50:20 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ std::array<int, 2> Triangle::getC() const {
 }
 
 void Triangle::setA(int x, int y) {
+	if (x > 50) {
+		throw Triangle::NotAllowedValues();
+	}
 	this->a[0] = x;
 	this->a[1] = y;
 }
