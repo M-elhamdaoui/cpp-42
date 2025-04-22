@@ -6,20 +6,20 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/12 19:03:11 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/01/12 19:03:42 by mel-hamd         ###   ########.fr        #
+#    Updated: 2025/04/22 16:03:03 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-name	= 
+name	= bureaucrat
 
 CC  	= c++
 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-headers	= 
+headers	= Bureaucrat.hpp
 
-srcs	= 
+srcs	=  main.cpp Bureaucrat.cpp
 
 objs	=  $(srcs:.cpp=.o)
 
