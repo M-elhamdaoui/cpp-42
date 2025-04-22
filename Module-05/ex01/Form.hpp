@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:04:24 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/22 16:56:40 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/22 17:03:17 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Form {
 
 	public :
 		Form();
-		Form(int);
+		Form(std::string name, int lowToSin, int lowToExec);
 		Form(const Form& copy);
 		~Form();
 		
