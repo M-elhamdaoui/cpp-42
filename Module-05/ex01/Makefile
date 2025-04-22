@@ -6,7 +6,7 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/12 19:03:11 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/04/22 16:03:03 by mel-hamd         ###   ########.fr        #
+#    Updated: 2025/04/22 16:30:49 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ CC  	= c++
 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-headers	= Bureaucrat.hpp
+headers	= Bureaucrat.hpp Form.hpp
 
-srcs	=  main.cpp Bureaucrat.cpp
+srcs	=  main.cpp Bureaucrat.cpp Form.cpp
 
 objs	=  $(srcs:.cpp=.o)
 
