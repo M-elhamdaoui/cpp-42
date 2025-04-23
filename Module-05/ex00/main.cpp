@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:43:56 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/19 19:04:11 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/23 06:25:22 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int main() {
 			b2.increment();
 			std::cout << b1 << std::endl;
 			std::cout << b2 << std::endl;
-			// b1.increment();
-			// b2.decrement();
+			b1.increment();
+			b2.decrement();
 			b1.decrement();
 			b2.increment();	
 			std::cout << b1 << std::endl;

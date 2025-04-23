@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:44:19 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/19 15:04:42 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/23 06:20:33 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,12 @@ class Bureaucrat  {
 
 		class GradeTooHighException : public std::exception {
 			public :
-				const char* what() const throw() {
-					return ("Grade too high !");
-				}
+				const char* what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception {
 			public :
-				const char* what() const throw() {
-					return ("Grade too low !");
-				}
+				const char* what() const throw();
 		};
 			
 };
