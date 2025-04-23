@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:45:49 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/19 17:55:23 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/23 07:07:59 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,23 @@ std::string Bureaucrat::getName() const {
 	return (this->name);
 }
 
-void Bureaucrat::increment() {
+void Bureaucrat::incrementGrade() {
 	this->setGrade(this->getGrade() - 1);
 }
-void Bureaucrat::decrement() {
+void Bureaucrat::decrementGrade() {
 	this->setGrade(this->getGrade() + 1);
 }
 
 std::ostream& operator<< (std::ostream &out, const Bureaucrat bureau) {
 	out << bureau.getName() << ", bureaucrat grade " << bureau.getGrade();
 	return (out);
+}
+
+
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+	return ("Grade too high !");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+	return ("Grade too low !");
 }
