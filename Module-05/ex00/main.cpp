@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:43:56 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/23 06:25:22 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/23 07:08:40 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int main() {
 			// Bureaucrat b2("Two", 0);
 			// Bureaucrat b2("Two", -0);
 
-			b2.increment();
+			b2.incrementGrade();
 			std::cout << b1 << std::endl;
 			std::cout << b2 << std::endl;
-			b1.increment();
-			b2.decrement();
-			b1.decrement();
-			b2.increment();	
+			b1.incrementGrade();
+			b2.decrementGrade();
+			b1.decrementGrade();
+			b2.incrementGrade();	
 			std::cout << b1 << std::endl;
 			std::cout << b2 << std::endl;
 	}
