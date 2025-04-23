@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:30:16 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/23 07:04:01 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/23 08:18:52 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,30 @@ Form& Form::operator=(const Form& copy) {
 	return (*this);
 }
 
+
+std::string Form::getName() const {
+	return (this->name);
+}
+
+int Form::getRequiredGradeToSign() const {
+	return (this->requiredGradeToSign);
+}
+
+int  Form::getRequiredGradeToExec() const {
+	return (this->requiredGradeToExec);
+}
+
+bool Form::getStatus() const {
+	return (this->status);
+}
+
+
 void Form::beSigned(Bureaucrat bureu) {
 	if (bureu.getGrade() > this->requiredGradeToSign)
 		throw Form::GradeTooLowException();
 	if (bureu.getGrade() < this->requiredGradeToSign)
 		throw Form::GradeTooHighException();
-	bureu.s
+	
 }
 
 
