@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:44:19 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/23 07:07:39 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/23 10:44:52 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 #include <exception>
 #include <iostream>
+#include "Form.hpp"
 
+class Form;
 
 class Bureaucrat  {
 	private :
@@ -32,6 +34,8 @@ class Bureaucrat  {
 		void 		setGrade(int grade);
 		int  		getGrade() const;
 		std::string getName() const;
+
+		void signForm(Form& form);
 
 		void incrementGrade();
 		void decrementGrade();

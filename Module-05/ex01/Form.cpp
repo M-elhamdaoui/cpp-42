@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:30:16 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/23 08:18:52 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/23 11:01:14 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 
 
-Form::Form() : name("Dedault"), requiredGradeToExec(150), requiredGradeToSign(150) {
+Form::Form() : name("Dedault"), requiredGradeToSign(150) , requiredGradeToExec(150) {
 	this->status = false;
 }
 
@@ -58,28 +58,32 @@ bool Form::getStatus() const {
 }
 
 
-void Form::beSigned(Bureaucrat bureu) {
+void Form::beSigned(Bureaucrat& bureu) {
 	if (bureu.getGrade() > this->requiredGradeToSign)
 		throw Form::GradeTooLowException();
-	if (bureu.getGrade() < this->requiredGradeToSign)
-		throw Form::GradeTooHighException();
-	
+	this->status = true;
+}
+
+const char* Form::GradeTooHighException::what() const throw() {
+	return "the grade too high !";
+}
+
+const char* Form::GradeTooLowException::what() const throw() {
+	return "The grade too low !";
 }
 
 
 
 
 
-
-
 std::ostream& operator<< (std::ostream& os, const Form form)  {
-	os << " Form Name : " << form.getName();
+	os << "Form Name : " << form.getName();
 	os << ", grade required to execute : " << form.getRequiredGradeToExec();
 	os << ", grade required to sign : " << form.getRequiredGradeToSign();
 	os << ", signed : ";
 	if (form.getStatus())
-		os << " Yes "<< std::endl;
+		os << " Yes ";
 	else
-		os << " No" << std::endl;
+		os << " No";
 	return (os);
 }
