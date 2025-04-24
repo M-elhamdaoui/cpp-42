@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:04:24 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/23 10:42:53 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 06:28:48 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 	private :
 		const std::string name;
 		bool status;
@@ -25,12 +25,12 @@ class Form {
 		const int requiredGradeToExec;
 
 	public :
-		Form();
-		Form(std::string name, int lowToSin, int lowToExec);
-		Form(const Form& copy);
-		~Form();
+		AForm();
+		AForm(std::string name, int lowToSin, int lowToExec);
+		AForm(const AForm& copy);
+		virtual ~AForm();
 		
-		Form& operator=(const Form& copy);
+		AForm& operator=(const AForm& copy);
 
 		void  beSigned(Bureaucrat& bureu);
 
@@ -49,4 +49,4 @@ class Form {
 		};
 };
 
-std::ostream& operator<< (std::ostream& os, const Form form) ;
+std::ostream& operator<< (std::ostream& os, const AForm form) ;

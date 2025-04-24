@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:30:16 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/23 11:01:14 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 06:30:33 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 
 
-Form::Form() : name("Dedault"), requiredGradeToSign(150) , requiredGradeToExec(150) {
+AForm::AForm() : name("Dedault"), requiredGradeToSign(150) , requiredGradeToExec(150) {
 	this->status = false;
 }
 
 
-Form::Form(std::string name, int lowToSin, int lowToExec) : name(name),  requiredGradeToSign(lowToSin), requiredGradeToExec(lowToExec) {
+AForm::AForm(std::string name, int lowToSin, int lowToExec) : name(name),  requiredGradeToSign(lowToSin), requiredGradeToExec(lowToExec) {
 	this->status = false;
 }
 
 
-Form::Form(const Form& copy) : name(copy.getName()), requiredGradeToSign(copy.getRequiredGradeToSign()), requiredGradeToExec(copy.getRequiredGradeToExec()) {
+AForm::AForm(const AForm& copy) : name(copy.getName()), requiredGradeToSign(copy.getRequiredGradeToSign()), requiredGradeToExec(copy.getRequiredGradeToExec()) {
 	this->status = copy.getStatus();
 }
 
-Form::~Form() {
+AForm::~AForm() {
 
 }
 
-Form& Form::operator=(const Form& copy) {
+AForm& AForm::operator=(const AForm& copy) {
 	if (this  != &copy)
 	{
 		this->status = copy.getStatus();
@@ -41,34 +41,34 @@ Form& Form::operator=(const Form& copy) {
 }
 
 
-std::string Form::getName() const {
+std::string AForm::getName() const {
 	return (this->name);
 }
 
-int Form::getRequiredGradeToSign() const {
+int AForm::getRequiredGradeToSign() const {
 	return (this->requiredGradeToSign);
 }
 
-int  Form::getRequiredGradeToExec() const {
+int  AForm::getRequiredGradeToExec() const {
 	return (this->requiredGradeToExec);
 }
 
-bool Form::getStatus() const {
+bool AForm::getStatus() const {
 	return (this->status);
 }
 
 
-void Form::beSigned(Bureaucrat& bureu) {
+void AForm::beSigned(Bureaucrat& bureu) {
 	if (bureu.getGrade() > this->requiredGradeToSign)
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	this->status = true;
 }
 
-const char* Form::GradeTooHighException::what() const throw() {
+const char* AForm::GradeTooHighException::what() const throw() {
 	return "the grade too high !";
 }
 
-const char* Form::GradeTooLowException::what() const throw() {
+const char* AForm::GradeTooLowException::what() const throw() {
 	return "The grade too low !";
 }
 
@@ -76,7 +76,7 @@ const char* Form::GradeTooLowException::what() const throw() {
 
 
 
-std::ostream& operator<< (std::ostream& os, const Form form)  {
+std::ostream& operator<< (std::ostream& os, const AForm form)  {
 	os << "Form Name : " << form.getName();
 	os << ", grade required to execute : " << form.getRequiredGradeToExec();
 	os << ", grade required to sign : " << form.getRequiredGradeToSign();
