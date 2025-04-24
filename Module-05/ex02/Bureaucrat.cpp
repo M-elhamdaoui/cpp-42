@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:45:49 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 06:27:29 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 10:44:52 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,17 @@ const char* Bureaucrat::GradeTooHighException::what() const throw() {
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("Grade too low !");
+}
+
+
+void Bureaucrat::executeForm(AForm const & form) {
+	
+	try {
+		form.execute(*this);
+		std::cout <<  this->getName() <<" executed the form : " << form.getName() << std::endl;
+	}
+	catch (const std::exception& ex) {
+		std::cout << this->getName() << " Can´t execute form " << form.getName() << " because " << ex.what() << std::endl;
+	}
+
 }

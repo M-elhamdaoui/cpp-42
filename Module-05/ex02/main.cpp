@@ -6,37 +6,35 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:43:56 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 06:36:19 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 11:05:30 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 
 int main() {
 
 	try {
 			Bureaucrat b1("One", 1);
-			Bureaucrat b2("Two", 150);
-			AForm form("form-1",50 , 100);
-			// Bureaucrat b2("Two", 161);
-			// Bureaucrat b2("Two", 0);
-			// Bureaucrat b2("Two", -0);
+			Bureaucrat b2("Two", 100);
+			RobotomyRequestForm roboto("Home");
+			PresidentialPardonForm president("school");
+			ShrubberyCreationForm shrubbery("street");
 
-			b2.incrementGrade();
-			std::cout << b1 << std::endl;
-			std::cout << b2 << std::endl;
-			std::cout  << form << std::endl;
-			// b1.increment();
-			// b2.decrement();
-			b1.decrementGrade();
-			b2.incrementGrade();	
-			b1.signForm(form);
-			b2.signForm(form);
+			b1.signForm(roboto);
+			b1.signForm(shrubbery);
+			b1.executeForm(roboto);
+			b1.executeForm(president);
+			b1.executeForm(shrubbery);
 
-			std::cout  << form << std::endl;
-			std::cout << b1 << std::endl;
-			std::cout << b2 << std::endl;
+			b2.executeForm(roboto);
+			b2.executeForm(president);
+			b2.executeForm(shrubbery);
+
 	}
 	catch (const std::exception& ex) 
 	{

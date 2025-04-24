@@ -6,15 +6,15 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:24:23 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 08:38:11 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 11:00:38 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-# include "RobotomyRequestForm.cpp"
+# include "RobotomyRequestForm.hpp"
 
 
-RobotoMyRequestForm::RobotomyRequestForm() : AForm("Dfeault Robotomy request Form", 72, 45 ) {
+RobotomyRequestForm::RobotomyRequestForm() : AForm("Dfeault Robotomy request Form", 72, 45 ) {
     this->target = "Default";
 }
 
@@ -39,6 +39,12 @@ RobotomyRequestForm& RobotomyRequestForm::operator= (const RobotomyRequestForm& 
     return (*this);
 }
 
-void RobotomyRequestForm::getTarget() const {
+std::string RobotomyRequestForm::getTarget() const {
     return (this->target);
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
+    if(this->getStatus() == false || executor.getGrade() > this->getRequiredGradeToExec())
+        throw RobotomyRequestForm::GradeTooLowException();
+    std::cout << "Do some Robotomy request form " << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:48:41 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 09:38:50 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 10:57:12 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ PresidentialPardonForm::~PresidentialPardonForm() {
 
 }
 
-std::string PresidentialPardonForm::getTarget() {
-    return (this->target);
-}
+
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& copy) {
     if (this != &copy)
@@ -41,3 +39,12 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
     return (*this);
 }
 
+std::string PresidentialPardonForm::getTarget() const {
+    return (this->target);
+}
+
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
+    if(this->getStatus() == false || executor.getGrade() > this->getRequiredGradeToExec())
+        throw PresidentialPardonForm::GradeTooLowException();
+    std::cout << "Do some Presidential Pardon " << std::endl;
+}

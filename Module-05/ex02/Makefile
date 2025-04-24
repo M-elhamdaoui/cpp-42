@@ -6,7 +6,7 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 15:41:12 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/04/24 06:40:17 by mel-hamd         ###   ########.fr        #
+#    Updated: 2025/04/24 10:06:41 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ CC  	= c++
 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-headers	=  AForm.hpp Bureaucrat.hpp 
+headers	=  AForm.hpp Bureaucrat.hpp  ShrubberyCreationForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp 
 
-srcs	=  AForm.cpp Bureaucrat.cpp main.cpp
+srcs	=  AForm.cpp Bureaucrat.cpp main.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp 
 
 objs	=  $(srcs:.cpp=.o)
 

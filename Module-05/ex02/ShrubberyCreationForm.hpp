@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 06:45:02 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 08:41:17 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 10:50:26 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ class ShrubberyCreationForm : public AForm {
 
 
         std::string getTarget() const;
-        ShrubberyCreationForm& operator= (conat ShrubberyCreationForm& copy);
-
+        ShrubberyCreationForm& operator= (const ShrubberyCreationForm& copy);
+        void execute(Bureaucrat const& executor) const;
 };

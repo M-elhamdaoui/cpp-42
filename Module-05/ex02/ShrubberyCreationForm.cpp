@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 06:58:07 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 08:10:04 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 10:51:15 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator= (const ShrubberyCreation
     return (*this);
 }
 
-void ShrubberyCreationForm::getTarget() const {
+std::string ShrubberyCreationForm::getTarget() const {
     return (this->target);
+}
+
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+    if(this->getStatus() == false || executor.getGrade() > this->getRequiredGradeToExec())
+        throw ShrubberyCreationForm::GradeTooLowException();
+    std::cout << "Do some Robotomy request form " << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:24:31 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 08:25:15 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 10:50:06 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ class RobotomyRequestForm : public AForm {
 
 
         std::string getTarget() const;
-        RobotomyRequestForm& operator= (conat RobotomyRequestForm& copy);
-
-}
+        RobotomyRequestForm& operator= (const RobotomyRequestForm& copy);
+        void execute(Bureaucrat const& executor) const;
+};

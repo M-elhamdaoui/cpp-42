@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:44:19 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 06:27:53 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 10:32:35 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ class Bureaucrat  {
 			public :
 				const char* what() const throw();
 		};
+
+		void executeForm(AForm const & form);
 			
 };
 

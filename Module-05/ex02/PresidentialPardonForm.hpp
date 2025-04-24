@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:39:45 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 08:48:17 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 10:56:39 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ class PresidentialPardonForm : public AForm {
         ~PresidentialPardonForm();
 
         std::string getTarget() const;
-        PresidentialPardonForm operator= (const PresidentialPardonForm& copy);
+        PresidentialPardonForm& operator= (const PresidentialPardonForm& copy);
+        void execute(Bureaucrat const& executor) const;
 };

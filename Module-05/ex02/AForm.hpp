@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:04:24 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 06:28:48 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 10:44:22 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ class AForm {
 			public :
 					const char* what() const throw();
 		};
+
+		virtual void execute(Bureaucrat const & executor) const = 0 ; 
 };
 
-std::ostream& operator<< (std::ostream& os, const AForm form) ;
+std::ostream& operator<< (std::ostream& os, const AForm& form) ;
