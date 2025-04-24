@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:43:56 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/23 10:59:36 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 06:36:19 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main() {
 	try {
 			Bureaucrat b1("One", 1);
 			Bureaucrat b2("Two", 150);
-			Form form("form-1",50 , 100);
+			AForm form("form-1",50 , 100);
 			// Bureaucrat b2("Two", 161);
 			// Bureaucrat b2("Two", 0);
 			// Bureaucrat b2("Two", -0);
