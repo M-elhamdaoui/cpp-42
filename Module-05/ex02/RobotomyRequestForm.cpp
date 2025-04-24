@@ -1,0 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/24 08:24:23 by mel-hamd          #+#    #+#             */
+/*   Updated: 2025/04/24 08:38:11 by mel-hamd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+# include "RobotomyRequestForm.cpp"
+
+
+RobotoMyRequestForm::RobotomyRequestForm() : AForm("Dfeault Robotomy request Form", 72, 45 ) {
+    this->target = "Default";
+}
+
+
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Robotomy request form", 72, 45) {
+    this->target = target;
+}
+
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) : AForm(copy.getName(), copy.getRequiredGradeToSign(), copy.getRequiredGradeToExec()) {
+    this->target = copy.getTarget();
+}
+
+RobotomyRequestForm::~RobotomyRequestForm() {
+    
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator= (const RobotomyRequestForm& copy) {
+    if (this != &copy) {
+        this->target = copy.getTarget();
+    }
+    return (*this);
+}
+
+void RobotomyRequestForm::getTarget() const {
+    return (this->target);
+}
