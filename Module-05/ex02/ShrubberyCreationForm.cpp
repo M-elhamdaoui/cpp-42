@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 06:58:07 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 12:41:55 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:05:13 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,20 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
         throw  ShrubberyCreationForm::GradeTooLowException();
     if (this->getStatus() == false)
         throw ShrubberyCreationForm::FormAlreadySigned();
-    std::cout << "Do some Robotomy request form " << std::endl;
+    std::string fileName = this->getTarget() + "_shrubbery";
+    std::ofstream file(fileName.c_str());
+    if (!file)
+        return ;
+    file << "           \\/ |    |/ "<< std::endl;
+    file << "        \\/ / \\||/  /_/___/_" << std::endl;
+    file << "         \\/   |/ \\/" << std::endl;
+    file << "    _\\__\\_\\   |  /_____/_" << std::endl;
+    file << "           \\  | /          /" << std::endl;
+    file << " __ _-----`  |{,-----------~" << std::endl;
+    file << "            \\ }{" << std::endl;
+    file << "             }{{ " << std::endl;
+    file << "             }}{" << std::endl;
+    file << "             {{}" << std::endl;
+    file << "       , -=-~{ .-^- _"  << std::endl;
+    file.close();
 }

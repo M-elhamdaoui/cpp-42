@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:04:24 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 12:41:11 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 14:41:10 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
-
+#include <fstream>
 class Bureaucrat;
 
 class AForm {
