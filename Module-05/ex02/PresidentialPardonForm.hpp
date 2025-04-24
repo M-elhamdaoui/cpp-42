@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 06:45:02 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 08:41:17 by mel-hamd         ###   ########.fr       */
+/*   Created: 2025/04/24 08:39:45 by mel-hamd          #+#    #+#             */
+/*   Updated: 2025/04/24 08:48:17 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm {
+
+class PresidentialPardonForm : public AForm {
 
     private :
         std::string target;
-
     public :
-        ShrubberyCreationForm();
-        ShrubberyCreationForm(std::string target);
-        ShrubberyCreationForm(const ShrubberyCreationForm& copy);
-        ~ShrubberyCreationForm();
-
+        PresidentialPardonForm();
+        PresidentialPardonForm(std::string target);
+        PresidentialPardonForm(const PresidentialPardonForm& copy);
+        ~PresidentialPardonForm();
 
         std::string getTarget() const;
-        ShrubberyCreationForm& operator= (conat ShrubberyCreationForm& copy);
-
+        PresidentialPardonForm operator= (const PresidentialPardonForm& copy);
 };
