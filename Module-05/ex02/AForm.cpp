@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:30:16 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 10:43:37 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 12:28:06 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,10 @@ const char* AForm::GradeTooLowException::what() const throw() {
 	return "The grade too low !";
 }
 
+
+const char* AForm::FormAlreadySigned::what() const throw() {
+	return ("trying to execute form not signed yet !");
+}
 
 
 

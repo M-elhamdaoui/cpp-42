@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 06:58:07 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 10:51:15 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 12:41:55 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ std::string ShrubberyCreationForm::getTarget() const {
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-    if(this->getStatus() == false || executor.getGrade() > this->getRequiredGradeToExec())
-        throw ShrubberyCreationForm::GradeTooLowException();
+    if (executor.getGrade() > this->getRequiredGradeToExec())
+        throw  ShrubberyCreationForm::GradeTooLowException();
+    if (this->getStatus() == false)
+        throw ShrubberyCreationForm::FormAlreadySigned();
     std::cout << "Do some Robotomy request form " << std::endl;
 }

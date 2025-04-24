@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:43:56 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 11:05:30 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 12:43:02 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main() {
 			PresidentialPardonForm president("school");
 			ShrubberyCreationForm shrubbery("street");
 
+			b1.executeForm(roboto);
 			b1.signForm(roboto);
 			b1.signForm(shrubbery);
 			b1.executeForm(roboto);

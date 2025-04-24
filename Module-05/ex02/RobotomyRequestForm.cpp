@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:24:23 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 11:00:38 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 12:42:14 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ std::string RobotomyRequestForm::getTarget() const {
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
-    if(this->getStatus() == false || executor.getGrade() > this->getRequiredGradeToExec())
-        throw RobotomyRequestForm::GradeTooLowException();
+    if (executor.getGrade() > this->getRequiredGradeToExec())
+        throw  RobotomyRequestForm::GradeTooLowException();
+    if (this->getStatus() == false )
+        throw RobotomyRequestForm::FormAlreadySigned();
     std::cout << "Do some Robotomy request form " << std::endl;
 }
