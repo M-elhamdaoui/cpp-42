@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:24:23 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 12:42:14 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/24 16:11:44 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,12 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
         throw  RobotomyRequestForm::GradeTooLowException();
     if (this->getStatus() == false )
         throw RobotomyRequestForm::FormAlreadySigned();
-    std::cout << "Do some Robotomy request form " << std::endl;
+    std::cout << "Some drilling noises... " << std::endl;
+    std::srand(std::time(0));
+    int num = std::rand();
+
+    if (num % 2)
+        std::cout << this->getTarget() << " has been robotomized successfully 50% of the time" << std::endl;
+    else
+        std::cout << "The robotomy failed." << std::endl;
 }
