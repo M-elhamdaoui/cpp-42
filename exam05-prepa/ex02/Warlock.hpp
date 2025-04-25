@@ -2,10 +2,19 @@
 
 # include <iostream>
 
+#include <map>
+
+#include "ASpell.hpp"
+#include "SpellBook.hpp"
+
+class ASpell;
+
 class Warlock {
     private:
         std::string name;
         std::string title;
+        SpellBook spells;
+
     public:
         Warlock( const std::string& name,const std::string& title);
         ~Warlock();
@@ -14,4 +23,9 @@ class Warlock {
 
         void setTitle(const std::string& title);
         void introduce() const;
+
+
+        void learnSpell( ASpell* aSplell );
+        void forgetSpell( const std::string& name ) ;
+        void launchSpell(const std::string& name, const ATarget& aTarget );
 };
