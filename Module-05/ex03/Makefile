@@ -5,20 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/22 15:41:45 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/02/22 15:41:48 by mel-hamd         ###   ########.fr        #
+#    Created: 2025/02/22 15:41:12 by mel-hamd          #+#    #+#              #
+#    Updated: 2025/04/26 08:47:33 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-name	= 
+name	=  inern
 
 CC  	= c++
 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-headers	= 
+headers	=  Intern.hpp AForm.hpp Bureaucrat.hpp  ShrubberyCreationForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp 
 
-srcs	= 
+srcs	=  Intern.cpp AForm.cpp Bureaucrat.cpp main.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp 
 
 objs	=  $(srcs:.cpp=.o)
 
