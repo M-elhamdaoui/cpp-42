@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:45:49 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/23 10:55:12 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/26 12:25:27 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void Bureaucrat::signForm(Form& form) {
 		
 	}
 	catch (const std::exception& ex) {
-		std::cout << this->getName() << " couldn’t sign " << form.getName() << " because " << ex.what() << std::endl ;
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << ex.what() << std::endl ;
 	}
 }
 

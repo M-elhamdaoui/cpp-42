@@ -6,7 +6,7 @@
 #    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 15:41:12 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/04/24 10:06:41 by mel-hamd         ###   ########.fr        #
+#    Updated: 2025/04/26 12:45:07 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(name) : $(objs)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 clean : 
-		rm -rf $(objs)
+		rm -rf $(objs) *_shrubbery
 
 fclean : clean
 		rm -rf $(name)

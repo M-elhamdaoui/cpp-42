@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:24:23 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 16:11:44 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/26 13:00:53 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
     if (executor.getGrade() > this->getRequiredGradeToExec())
         throw  RobotomyRequestForm::GradeTooLowException();
     if (this->getStatus() == false )
-        throw RobotomyRequestForm::FormAlreadySigned();
+        throw RobotomyRequestForm::FormNotSigned();
     std::cout << "Some drilling noises... " << std::endl;
     std::srand(std::time(0));
     int num = std::rand();

@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:04:24 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 16:07:14 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/26 12:43:09 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class AForm {
 		
 		AForm& operator=(const AForm& copy);
 
-		void  beSigned(Bureaucrat& bureu);
+		void  beSigned(const Bureaucrat& bureu);
 
 		std::string getName() const;
 		int getRequiredGradeToSign() const;
@@ -50,7 +50,7 @@ class AForm {
 			public :
 					const char* what() const throw();
 		};
-		class FormAlreadySigned : public std::exception {
+		class FormNotSigned : public std::exception {
 			const char* what() const throw();
 		};
 		virtual void execute(Bureaucrat const & executor) const = 0 ; 

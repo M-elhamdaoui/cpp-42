@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:30:16 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 12:28:06 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/26 12:43:20 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ bool AForm::getStatus() const {
 }
 
 
-void AForm::beSigned(Bureaucrat& bureu) {
+void AForm::beSigned(const Bureaucrat& bureu) {
 	if (bureu.getGrade() > this->requiredGradeToSign)
 		throw AForm::GradeTooLowException();
 	this->status = true;
@@ -73,7 +73,7 @@ const char* AForm::GradeTooLowException::what() const throw() {
 }
 
 
-const char* AForm::FormAlreadySigned::what() const throw() {
+const char* AForm::FormNotSigned::what() const throw() {
 	return ("trying to execute form not signed yet !");
 }
 

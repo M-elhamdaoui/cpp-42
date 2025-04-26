@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:04:24 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/23 10:42:53 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/26 11:10:31 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Form {
 		
 		Form& operator=(const Form& copy);
 
-		void  beSigned(Bureaucrat& bureu);
+		void  beSigned(const Bureaucrat& bureu);
 
 		std::string getName() const;
 		int getRequiredGradeToSign() const;

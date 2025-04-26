@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:30:16 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/23 11:01:14 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/26 12:26:23 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ bool Form::getStatus() const {
 }
 
 
-void Form::beSigned(Bureaucrat& bureu) {
+void Form::beSigned(const Bureaucrat& bureu) {
 	if (bureu.getGrade() > this->requiredGradeToSign)
 		throw Form::GradeTooLowException();
 	this->status = true;
@@ -82,8 +82,8 @@ std::ostream& operator<< (std::ostream& os, const Form form)  {
 	os << ", grade required to sign : " << form.getRequiredGradeToSign();
 	os << ", signed : ";
 	if (form.getStatus())
-		os << " Yes ";
+		os << " Yes.";
 	else
-		os << " No";
+		os << " No.";
 	return (os);
 }

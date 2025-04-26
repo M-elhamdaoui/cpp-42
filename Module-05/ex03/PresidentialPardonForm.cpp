@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:48:41 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 15:23:40 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/26 13:00:53 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
     if (executor.getGrade() > this->getRequiredGradeToExec())
         throw  PresidentialPardonForm::GradeTooLowException();
     if (this->getStatus() == false )
-        throw PresidentialPardonForm::FormAlreadySigned();
+        throw PresidentialPardonForm::FormNotSigned();
     std::cout << this->getTarget() << "  has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

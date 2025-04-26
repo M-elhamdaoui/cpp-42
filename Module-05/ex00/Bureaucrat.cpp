@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 15:45:49 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/23 07:08:10 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/26 10:48:35 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void Bureaucrat::decrementGrade() {
 
 std::ostream& operator<< (std::ostream &out, const Bureaucrat bureau) {
 	out << bureau.getName() << ", bureaucrat grade " << bureau.getGrade();
+	out << "." ;
 	return (out);
 }
 

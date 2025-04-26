@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 06:58:07 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/24 15:05:13 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/26 13:00:53 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
     if (executor.getGrade() > this->getRequiredGradeToExec())
         throw  ShrubberyCreationForm::GradeTooLowException();
     if (this->getStatus() == false)
-        throw ShrubberyCreationForm::FormAlreadySigned();
+        throw ShrubberyCreationForm::FormNotSigned();
     std::string fileName = this->getTarget() + "_shrubbery";
     std::ofstream file(fileName.c_str());
     if (!file)
