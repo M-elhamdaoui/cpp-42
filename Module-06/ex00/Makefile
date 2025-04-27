@@ -1,10 +1,12 @@
-name	= 
+name	= convert
+
 CC		= c++ 
+
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADERS	= 
+HEADERS	= ScalarConverter.hpp
 
-srcs	= main.cpp
+srcs	= main.cpp ScalarConverter.cpp
 
 objs	= $(srcs:.cpp=.o)
 
