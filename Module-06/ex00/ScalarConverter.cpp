@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 09:20:46 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/28 10:48:53 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:33:25 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,20 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& copy) {
         return *this;
     return *this;
 }
-bool checkValid(const std::string& str) {
+bool ScalarConverter::checkValid(const std::string& str) {
 	int dots = 0;
-	int length = 0;
-	if (str[str.length() - 1] != 'f' || (str[str.length() - 1] >= '0' || str[str.length() - 1] <= '9'))
+
+	if (str[str.length() - 1] != 'f' && (str[str.length() - 1] < '0' || str[str.length() - 1] > '9'))
 		return (true);
-	if ()
+
+	for (size_t i = 0; i < str.length() - 1 ; i++) {
+		if (str[i] != '.'  && (str[i] < '0' || str[i] > '9'))
+			return true;
+		if (str[i] == '.')
+			dots++;
+		if (dots > 1)
+			return (true);
+	}
 	return (false);
 }
 
@@ -75,7 +83,9 @@ void ScalarConverter::convert(const std::string& str) {
 			}
 			else if (str.length() == 1 || str == "nan" || str == "nanf")
 				throw  std::string("nan");
-			else if (str[0] != '+' && str[0] != '-' && (str[0] >= '0' || str[0] <= '9'))
+			else if (str[0] != '+' && str[0] != '-' && (str[0] < '0' || str[0] > '9'))
+				throw std::string("nan");
+			else if (checkValid(str))
 				throw std::string("nan");
 			
 	}
