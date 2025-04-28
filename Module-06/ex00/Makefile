@@ -10,6 +10,7 @@ srcs	= main.cpp ScalarConverter.cpp
 
 objs	= $(srcs:.cpp=.o)
 
+
 all = $(name)
 
 

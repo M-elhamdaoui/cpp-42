@@ -30,9 +30,9 @@ void ScalarConverter::convert(const std::string& str) {
         else
             std::cout << "char: " << "Non displayable" << std::endl;
 
-        // std::cout << "int: " << "int here " << std::endl;
-        // std::cout << "float: " << "float here " << std::endl;
-        // std::cout << "double: " << "double here " << std::endl;
+        std::cout << "int: " << static_cast<int>(res) << std::endl;
+        std::cout << "float: " << << static_cast<float>(res) << std::endl;
+        std::cout << "double: " << static_cast<double>(res) << std::endl;
     }
     // std::cout << "char: " << "char here " << std::endl;
     // std::cout << "int: " << "int here " << std::endl;
