@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:32:41 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/27 16:45:14 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/29 16:42:46 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int main(int ac, char** av) {
 
     if (ac == 2) {
         ScalarConverter::convert(av[1]);
-    }        
+    }
+	else
+		std::cout << "Invalid number of args " << std::endl;        
     return (0);
 }

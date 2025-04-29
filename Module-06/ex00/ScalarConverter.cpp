@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 09:20:46 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/29 10:19:10 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/29 16:45:12 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,6 @@ void ScalarConverter::convert(const std::string& str) {
     double res = std::strtod(str.c_str(), &rest);
 	try {
 
-		    // if (str.length() == 0) {
-
-			// 	std::cout << "int: " << static_cast<int>(res) << std::endl;
-        	// 	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(res) << std::endl;
-        	// 	std::cout << "double: " << static_cast<double>(res) << std::endl;
-			// }
 			if (str == "inff" || str =="+inff" || str == "inf" || str =="+inf")
 				throw std::string("inf");
 			else if (str == "-inf" || str =="-inff")
@@ -72,10 +66,9 @@ void ScalarConverter::convert(const std::string& str) {
         		    std::cout << "char: " << str << std::endl;
         		else
         		    std::cout << "char: " << "Non displayable" << std::endl;
-
-        		std::cout << "int: " << static_cast<int>(res) << std::endl;
-        		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(res) << "f" << std::endl;
-        		std::cout << "double: " << std::fixed << std::setprecision(1)  << static_cast<double>(res) << std::endl;
+        		std::cout << "int: " << static_cast<int>(str[0]) << std::endl;
+        		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(str[0]) << "f" << std::endl;
+        		std::cout << "double: " << std::fixed << std::setprecision(1)  << static_cast<double>(str[0]) << std::endl;
    		 	}
 			else if (str.length() == 1 && (str[0] >= '0' || str[0] <= '9')) {
         		std::cout << "char: " << "Non displayable" << std::endl;
