@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 06:21:36 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/29 11:34:22 by mel-hamd         ###   ########.fr       */
+/*   Created: 2025/04/29 11:04:58 by mel-hamd          #+#    #+#             */
+/*   Updated: 2025/04/29 11:25:02 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <iomanip>
 
-#include "Data.hpp"
 
-class Serializer {
-	private :
-		Serializer();
-		Serializer(const Serializer& copy);
-		~Serializer();
-		Serializer& operator=(const Serializer &copy);
-	public :
-		static uintptr_t serialize(Data* ptr);
-		static Data* deserialize(uintptr_t raw);
-};
-
+typedef	struct s_data {
+	std::string content;
+}  Data ;
