@@ -1,14 +1,14 @@
-name	= 
+name	= dynamic
 CC		= c++ 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADERS	= 
+HEADERS	= A.hpp B.hpp C.hpp Base.hpp functions.hpp
 
-srcs	= main.cpp
+srcs	= main.cpp A.cpp B.cpp C.cpp Base.cpp functions.cpp
 
 objs	= $(srcs:.cpp=.o)
 
-all = $(name)
+all : $(name)
 
 
 $(name) : $(objs)
