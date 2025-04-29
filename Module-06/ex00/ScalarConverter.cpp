@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 09:20:46 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/29 06:16:08 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/29 10:19:10 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,19 +99,19 @@ void ScalarConverter::convert(const std::string& str) {
         		    std::cout << "char: " << "Non displayable" << std::endl;
 	
 				if (res > std::numeric_limits<int>::max() || res < std::numeric_limits<int>::min())
-					std::cout << "char: " << "impossible" << std::endl;
+					std::cout << "int: " << "impossible" << std::endl;
 				else
-        		    std::cout << "char: " << static_cast<int>(res) << std::endl;
+        		    std::cout << "int: " << static_cast<int>(res) << std::endl;
 				
 				if (res > std::numeric_limits<float>::max() || res < std::numeric_limits<float>::min())
-					std::cout << "char: " << "impossible" << std::endl;
+					std::cout << "float: " << "impossible" << std::endl;
 				else 
-        		    std::cout << "char: " << std::fixed << std::setprecision(1)  << static_cast<float>(res) << "f" << std::endl;
+        		    std::cout << "float: " << std::fixed << std::setprecision(1)  << static_cast<float>(res) << "f" << std::endl;
 
 				if (res > std::numeric_limits<double>::max() || res < std::numeric_limits<double>::min())
-					std::cout << "char: " << "impossible" << std::endl;
+					std::cout << "double: " << "impossible" << std::endl;
 				else 
-        		    std::cout << "char: " << std::fixed << std::setprecision(1)  << static_cast<double>(res) << std::endl;
+        		    std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(res) << std::endl;
 			}
 				
 			
