@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 09:20:46 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/28 13:33:25 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/29 06:16:08 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ bool ScalarConverter::checkValid(const std::string& str) {
 	for (size_t i = 0; i < str.length() - 1 ; i++) {
 		if (str[i] != '.'  && (str[i] < '0' || str[i] > '9'))
 			return true;
+		if (str[i] == '.' && (str[i + 1] < '0' || str[i + 1] > '9'))
+			return (true);
 		if (str[i] == '.')
 			dots++;
 		if (dots > 1)
@@ -72,14 +74,14 @@ void ScalarConverter::convert(const std::string& str) {
         		    std::cout << "char: " << "Non displayable" << std::endl;
 
         		std::cout << "int: " << static_cast<int>(res) << std::endl;
-        		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(res) << std::endl;
-        		std::cout << "double: " << static_cast<double>(res) << std::endl;
+        		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(res) << "f" << std::endl;
+        		std::cout << "double: " << std::fixed << std::setprecision(1)  << static_cast<double>(res) << std::endl;
    		 	}
 			else if (str.length() == 1 && (str[0] >= '0' || str[0] <= '9')) {
         		std::cout << "char: " << "Non displayable" << std::endl;
         		std::cout << "int: " << static_cast<int>(res) << std::endl;
-        		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(res) << std::endl;
-        		std::cout << "double: " << static_cast<double>(res) << std::endl;
+        		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(res)  << "f" << std::endl;
+        		std::cout << "double: "<< std::fixed << std::setprecision(1)  << static_cast<double>(res) << std::endl;
 			}
 			else if (str.length() == 1 || str == "nan" || str == "nanf")
 				throw  std::string("nan");
@@ -87,6 +89,31 @@ void ScalarConverter::convert(const std::string& str) {
 				throw std::string("nan");
 			else if (checkValid(str))
 				throw std::string("nan");
+			else
+			{
+				if (res > std::numeric_limits<char>::max() || res < std::numeric_limits<char>::min())
+					std::cout << "char: " << "impossible" << std::endl;
+				else if (res >= 32 && res < 127)
+        		    std::cout << "char: " << static_cast<char>(res) << std::endl;
+        		else
+        		    std::cout << "char: " << "Non displayable" << std::endl;
+	
+				if (res > std::numeric_limits<int>::max() || res < std::numeric_limits<int>::min())
+					std::cout << "char: " << "impossible" << std::endl;
+				else
+        		    std::cout << "char: " << static_cast<int>(res) << std::endl;
+				
+				if (res > std::numeric_limits<float>::max() || res < std::numeric_limits<float>::min())
+					std::cout << "char: " << "impossible" << std::endl;
+				else 
+        		    std::cout << "char: " << std::fixed << std::setprecision(1)  << static_cast<float>(res) << "f" << std::endl;
+
+				if (res > std::numeric_limits<double>::max() || res < std::numeric_limits<double>::min())
+					std::cout << "char: " << "impossible" << std::endl;
+				else 
+        		    std::cout << "char: " << std::fixed << std::setprecision(1)  << static_cast<double>(res) << std::endl;
+			}
+				
 			
 	}
 	catch (const std::string& err)
