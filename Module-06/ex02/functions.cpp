@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:07:55 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/29 13:14:39 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/29 16:14:28 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,36 @@ void identify(Base* p) {
 		std::cout << "its Type C " << std::endl;
 	else
 		std::cout << "Unknown type " << std::endl;
+}
+void identify(Base& p) {
+	try {
+		A& a = dynamic_cast<A&>(p);
+		(void)a;
+		std::cout << "its Type A " << std::endl;
+		return ;
+	}
+	catch (const std::exception& ex) {
+		(void)ex;
+	}
+	try {
+		B& b = dynamic_cast<B&>(p);
+		(void)b;
+		std::cout << "its Type B " << std::endl;
+		return ;
+	}
+	catch (const std::exception& ex) {
+		(void)ex;
+	}
+
+	try {
+		C& c = dynamic_cast<C&>(p);
+		(void)c;
+		std::cout << "its Type C " << std::endl;
+		return ;
+	}
+	catch (const std::exception& ex) {
+		(void)ex;
+	}
+
+	std::cout << "Unknown type " << std::endl;
 }
