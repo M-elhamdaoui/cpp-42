@@ -1,14 +1,14 @@
-name	= 
+name	= serializer
 CC		= c++ 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADERS	= 
+HEADERS	= Serializer.hpp Data.hpp
 
-srcs	= main.cpp
+srcs	= main.cpp Serializer.cpp
 
 objs	= $(srcs:.cpp=.o)
 
-all = $(name)
+all : $(name)
 
 
 $(name) : $(objs)
