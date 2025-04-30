@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 09:20:46 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/04/29 16:45:12 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/04/30 17:52:21 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& copy) {
         return *this;
     return *this;
 }
+
 bool ScalarConverter::checkValid(const std::string& str) {
 	int dots = 0;
 
