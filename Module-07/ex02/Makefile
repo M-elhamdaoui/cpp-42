@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+         #
+#    By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 19:51:17 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/05/01 19:51:39 by mel-hamd         ###   ########.fr        #
+#    Updated: 2025/05/02 15:26:09 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ name	= array
 CC		= c++ 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADERS	= 
+HEADERS	= Array.hpp Array.tpp
 
 srcs	= main.cpp 
 

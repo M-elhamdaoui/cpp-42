@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 08:43:14 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/02 11:01:55 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/02 15:24:49 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 #include <iostream>
 
+#include <stdexcept>
+
 template <typename T>
 class Array {
 	private :
 		T* arr;
-		unsigned int size;
+		unsigned int length;
 	public :
 		Array();
 		Array(const Array<T>& copy);
@@ -27,8 +29,8 @@ class Array {
 
 		Array<T>& operator=(const Array<T>& copy);
 		
-		T& operator[] (unsigned int);
-		T& operator[] (unsigned int ) const;
+		T& operator[] (unsigned int pos);
+		T& operator[] (unsigned int pos) const;
 
 		unsigned int size() const;
 };
