@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 08:43:22 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/02 15:30:48 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/02 16:04:15 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Array<T>::Array(const Array<T>& copy) {
 	
 	this->arr = new T[copy.size()];
 	this->length = copy.size();
-	for (unsigned int i = 0; i < this->length(); i++)
+	for (unsigned int i = 0; i < this->size(); i++)
 	{
 		arr[i] = copy[i];
 	}
