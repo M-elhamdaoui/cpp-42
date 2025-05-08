@@ -6,15 +6,15 @@
 #    By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/08 11:25:34 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/05/08 11:26:01 by mel-hamd         ###   ########.fr        #
+#    Updated: 2025/05/08 11:53:58 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-name	= 
+name	= easyfind
 CC		= c++ 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADERS	= 
+HEADERS	= easyfind.hpp easyfind.tpp
 
 srcs	= main.cpp 
 
