@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:08:18 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/08 15:29:33 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/08 16:53:00 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main() {
             sp.addNumber(17);
             sp.addNumber(9);
             sp.addNumber(11);
+            std::cout << sp.shortestSpan() << std::endl;
             std::cout << sp.longestSpan() << std::endl;
     }  
     catch (const std::exception& ex) {
