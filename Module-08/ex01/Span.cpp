@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:08:35 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/09 08:41:20 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/09 09:41:34 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ Span::~Span() {
     
 }
 
- Span& Span::operator=(const Span& copy) {
+ Span& Span::operator=(const Span& copy){
     if (this != & copy) {
         this->capacity = copy.getCapacity();
+        this->arr = copy.arr;
     }
     return (*this);
  }
@@ -50,7 +51,7 @@ void Span::addNumber(int num) {
 unsigned int Span::shortestSpan() const {
     if (this->arr.size() <= 1)
         throw NoSpan();
-    std::set<int> st;
+    std::multiset<int> st; 
     int prev;
     int first = 0;
     long res = *std::max_element(this->arr.begin(), this->arr.end());
