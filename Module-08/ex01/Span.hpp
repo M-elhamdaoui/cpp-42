@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:08:37 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/09 09:35:57 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/09 17:53:34 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,10 @@ class Span {
 
             class NoSpan : public std::exception {
                 public :
-                    const char* what() const throw() {
-                        return ("Error no span can be calculated !");
-                    }
+                    const char* what() const throw();
             };
             class FullValues : public std::exception {
                 public :
-                    const char* what() const throw() {
-                        return ("No space to add !");
-                    }
+                    const char* what() const throw();
             };
 };

@@ -6,11 +6,12 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:08:35 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/09 09:41:34 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/09 18:22:24 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <limits>
 
 
 Span::Span() {
@@ -51,26 +52,13 @@ void Span::addNumber(int num) {
 unsigned int Span::shortestSpan() const {
     if (this->arr.size() <= 1)
         throw NoSpan();
-    std::multiset<int> st; 
-    int prev;
-    int first = 0;
-    long res = *std::max_element(this->arr.begin(), this->arr.end());
-    for (std::vector<int>::const_iterator it = this->arr.begin(); it != this->arr.end(); it++)
-        st.insert(*it);
-    if (st.size() == 1)
-        return (0);
-    for (std::set<int>::const_iterator it = st.begin(); it != st.end() ; it++)
-    {
-       if (first == 0)
-        {
-            prev = *it;
-            first = 1;
-            continue;
-        }
-        unsigned int test = *it - prev;
-        if (test < res || res < 0)
-            res = test;
-        prev = *it;
+    std::vector<int> temp = this->arr;
+    std::sort(temp.begin(), temp.end());
+    long res = std::numeric_limits<long>::max();
+    for (size_t i = 0 ; i < temp.size() - 1; i++) {
+       long diff = static_cast<long>(temp[i + 1]) - static_cast<long>(temp[i]); 
+        if (diff < res)
+            res = diff;
     }
     return (res);
 }
@@ -81,4 +69,12 @@ unsigned int Span::longestSpan() const {
     std::vector<int>::const_iterator max = std::max_element(this->arr.begin(), this->arr.end());
     std::vector<int>::const_iterator min = std::min_element(this->arr.begin(), this->arr.end());
     return (*max - *min);
+}
+
+const char* Span::NoSpan::what() const throw() {
+    return ("Error no span can be calculated !");
+}
+
+const char* Span::FullValues::what() const throw() {
+    return ("No space to add !");
 }
