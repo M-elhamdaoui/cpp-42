@@ -6,15 +6,15 @@
 #    By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/08 11:26:25 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/05/08 12:06:13 by mel-hamd         ###   ########.fr        #
+#    Updated: 2025/05/09 07:01:28 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-name	= 
+name	= mutantstack
 CC		= c++ 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADERS	= 
+HEADERS	= MutantStack.hpp MutantStack.tpp
 
 srcs	= main.cpp 
 

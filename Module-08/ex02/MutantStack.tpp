@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 06:43:27 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/09 06:58:54 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/09 07:05:43 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,19 @@ MutantStack<T>& MutantStack<T>::operator=(const MutantStack<T>& copy) {
 }
 
 template <class T>
- MutantStack<T>::iterator MutantStack<T>::begin() {
-    return (c.begin());
+ typename MutantStack<T>::iterator MutantStack<T>::begin() {
+    return (std::stack<T>::c.begin());
 }
 template <class T>
- MutantStack<T>::const_iterator  MutantStack<T>::begin() const {
-    return (c.begin());
+ typename MutantStack<T>::const_iterator  MutantStack<T>::begin() const {
+    return (std::stack<T>::c.begin());
  }
 
  template <class T>
- MutantStack<T>::iterator MutantStack<T>::end() {
-    return (c.end());
+ typename MutantStack<T>::iterator MutantStack<T>::end() {
+    return (std::stack<T>::c.end());
 }
 template <class T>
- MutantStack<T>::const_iterator  MutantStack<T>::end() const {
-    return (c.end());
+ typename MutantStack<T>::const_iterator  MutantStack<T>::end() const {
+    return (std::stack<T>::c.end());
  }
