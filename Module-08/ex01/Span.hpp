@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:08:37 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/08 16:25:16 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/09 05:42:08 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ class Span {
             Span& operator=(const Span& copy);
             ~Span();
             void addNumber(int num);
+            
+            template <typename T>
+            void addNumber(T start, T end) {
+                unsigned int sizeToInsert = std::distance(start, end);
+                if (this->capacity > this->arr.size() + sizeToInsert)
+                    throw FullValues();
+                this->arr.insert(this->arr.end(), start, end);
+            }
 
             int shortestSpan() const;
             int longestSpan() const;
