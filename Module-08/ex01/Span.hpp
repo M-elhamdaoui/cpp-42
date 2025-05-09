@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:08:37 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/09 05:42:08 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/09 08:29:12 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ class Span {
                 this->arr.insert(this->arr.end(), start, end);
             }
 
-            int shortestSpan() const;
-            int longestSpan() const;
+            unsigned int shortestSpan() const;
+            unsigned int longestSpan() const;
             
             unsigned int getCapacity() const;
 

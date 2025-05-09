@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:08:35 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/08 16:50:37 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/09 08:41:20 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ void Span::addNumber(int num) {
 }
 
 
-int Span::shortestSpan() const {
+unsigned int Span::shortestSpan() const {
     if (this->arr.size() <= 1)
         throw NoSpan();
     std::set<int> st;
     int prev;
     int first = 0;
-    int res = *std::max_element(this->arr.begin(), this->arr.end());
+    long res = *std::max_element(this->arr.begin(), this->arr.end());
     for (std::vector<int>::const_iterator it = this->arr.begin(); it != this->arr.end(); it++)
         st.insert(*it);
     if (st.size() == 1)
@@ -66,15 +66,15 @@ int Span::shortestSpan() const {
             first = 1;
             continue;
         }
-        int test = *it - prev;
-        if (test < res)
+        unsigned int test = *it - prev;
+        if (test < res || res < 0)
             res = test;
         prev = *it;
     }
     return (res);
 }
 
-int Span::longestSpan() const {
+unsigned int Span::longestSpan() const {
     if (this->arr.size() <= 1)
         throw NoSpan();
     std::vector<int>::const_iterator max = std::max_element(this->arr.begin(), this->arr.end());

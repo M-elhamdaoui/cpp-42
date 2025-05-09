@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:08:18 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/09 05:44:24 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/09 08:42:46 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int main() {
             std::vector<int> v;
             v.push_back(400);
             v.push_back(421);
-            v.push_back(401);
-            v.push_back(512);
+            v.push_back(INT_MIN);
+            v.push_back(INT_MAX);
             Span sp = Span(5);
             sp.addNumber(6);
             sp.addNumber(3);
