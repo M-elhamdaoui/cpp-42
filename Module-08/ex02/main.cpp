@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 05:55:36 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/09 07:02:16 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/09 09:18:07 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,31 @@
 
 int main () {
         MutantStack<int> mstack;
-        mstack.push(5);
-        mstack.push(17);
-        std::cout << mstack.top() << std::endl;
-        mstack.pop();
-        std::cout << mstack.size() << std::endl;
+        mstack.push(1);
+        std::cout << "push 1 : " << std::endl;
+        std::cout <<  "begin() : " << *mstack.begin() << std::endl;
+        std::cout <<  "rbegin() : " << *mstack.rbegin() << std::endl;
         mstack.push(3);
-        mstack.push(5);
-        mstack.push(737);
-        //[...]
-        mstack.push(0);
-        MutantStack<int>::iterator it = mstack.begin();
-        MutantStack<int>::iterator ite = mstack.end();
-        ++it;
-        --it;
-        while (it != ite)
+        std::cout << "push 3 : " << std::endl;
+        std::cout <<  "begin() : " << *mstack.begin() << std::endl;
+        std::cout <<  "rbegin() : " << *mstack.rbegin() << std::endl;
+        mstack.push(4);
+        std::cout << "push 3 : " << std::endl;
+        std::cout <<  "begin() : " << *mstack.begin() << std::endl;
+        std::cout <<  "rbegin() : " << *mstack.rbegin() << std::endl;
+        std::cout << "---------- print stack with reverse iterators : " << std::endl;
+        for (MutantStack<int>::reverse_iterator t = mstack.rbegin() ; t != mstack.rend(); t++ )
         {
-        std::cout << *it << std::endl;
-        ++it;
+                std::cout << *t << std::endl;
         }
-        std::stack<int> s(mstack);
+        mstack.pop();
+        std::cout << "pop out top : " << std::endl;
+        std::cout <<  "begin() : " << *mstack.begin() << std::endl;
+        std::cout <<  "rbegin() : " << *mstack.rbegin() << std::endl;
+        std::cout << "---------- print stack with normal iterators : " << std::endl;
+        for (MutantStack<int>::iterator t = mstack.begin() ; t != mstack.end(); t++ )
+        {
+                std::cout << *t << std::endl;
+        }
         return 0;
 }
