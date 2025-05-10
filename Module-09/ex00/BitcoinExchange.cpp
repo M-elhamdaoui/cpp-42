@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/10 16:22:18 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/10 16:31:49 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void BitcoinExchange::processFile(const char* filePath, const kv& database) {
             BitcoinExchange::validateCharacters(line, '|');
             int count = 0;
             std::string part;
-            kv parsedFile;
+            float baseVal;
             std::stringstream ss(line);
             while (getline(ss, part, '|'))
             {
@@ -159,9 +159,13 @@ void BitcoinExchange::validateCharacters(const std::string& str, char c) {
 }
 
 bool BitcoinExchange::isValidDate(const int& year, const int& month,const int& day) {
+    if (year < 2009)
+        return (false);
     if (day < 1 || day > 31)
         return (false);
     if (month < 1 || month > 12)
+        return (false);
+    if (year == 2009 && month == 1 && day < 2)
         return (false);
     if (month == 2 && day > 29)
         return (false);
