@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:43 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/10 09:02:42 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/10 12:48:30 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,18 @@
 
 typedef std::map<std::string, float > kv;
 
-class BitcoinEchange {
+class BitcoinExchange {
     private :
-    BitcoinEchange();
-    BitcoinEchange(const BitcoinEchange& copy);
-    ~BitcoinEchange();
-    BitcoinEchange& operator=(const BitcoinEchange& copy);
+    BitcoinExchange();
+    BitcoinExchange(const BitcoinExchange& copy);
+    ~BitcoinExchange();
+    BitcoinExchange& operator=(const BitcoinExchange& copy);
     public :
         static kv loadDatabase();
+        static void extractDate(int& day, int& month, int& year, const std::string& str);
         static std::string trim(const std::string& str);
+        static void validateDateFormat(const std::string& str);
         static bool isLeapYear(const int& year);
         static bool isValidDate(const int& year, const int& month,const int& day);
-        static void processFile(const std::string& file, const kv& database);
+        static void processFile(const char* filePath, const kv& database);
 };
