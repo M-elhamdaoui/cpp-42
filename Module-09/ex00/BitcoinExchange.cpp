@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/10 14:54:33 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/10 16:22:18 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,11 @@ void BitcoinExchange::processFile(const char* filePath, const kv& database) {
                             if (e.what())
                                 throw std::logic_error(std::string("bad input => ") + line);
                     }
-                    std::cout << year << "-" << month << "-" << day << std::endl; 
+                    if (BitcoinExchange::isValidDate(year, month, day))
+                        std::cout << part << " is valid !" << std::endl;
+                    else
+                        throw std::logic_error(std::string("bad input => ") + line);
+                    // std::cout << year << "-" << month << "-" << day << std::endl; 
                 }
                 count++;
             }
@@ -152,6 +156,31 @@ void BitcoinExchange::validateCharacters(const std::string& str, char c) {
         throw std::logic_error(std::string("bad input => ") + str);
     if (c == '|' && count != 1)
          throw std::logic_error(std::string("bad input => ") + str);
+}
+
+bool BitcoinExchange::isValidDate(const int& year, const int& month,const int& day) {
+    if (day < 1 || day > 31)
+        return (false);
+    if (month < 1 || month > 12)
+        return (false);
+    if (month == 2 && day > 29)
+        return (false);
+    if (BitcoinExchange::isLeapYear(year) && month == 2 && day > 28)
+        return (false);
+    if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+        return (false);
+    return (true);
+}
+
+bool BitcoinExchange::isLeapYear(const int& year) {
+    if (year % 4 == 0)
+    {
+        if (year % 100 != 0)
+            return (1);
+        if (year % 400 == 0)
+            return (1);
+    }
+    return (0);
 }
 
 // void BitcoinExchange::validateFormat(const std::string& str) {
