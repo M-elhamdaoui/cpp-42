@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:08:37 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/09 18:24:20 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/10 06:00:53 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Span {
             void addNumber(T start, T end) {
                 unsigned int sizeToInsert = std::distance(start, end);
                 if (this->capacity > this->arr.size() + sizeToInsert)
-                    throw FullValues();
+                    throw std::logic_error("No space to add !");
                 this->arr.insert(this->arr.end(), start, end);
             }
 
@@ -41,13 +41,4 @@ class Span {
             unsigned int longestSpan() const;
             
             unsigned int getCapacity() const;
-
-            class NoSpan : public std::exception {
-                public :
-                    const char* what() const throw();
-            };
-            class FullValues : public std::exception {
-                public :
-                    const char* what() const throw();
-            };
 };

@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:08:35 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/09 18:22:24 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/10 05:56:13 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ Span::~Span() {
 
 void Span::addNumber(int num) {
     if (this->arr.size() == capacity)
-        throw FullValues();
+        throw std::logic_error("No space to add !");
     this->arr.push_back(num);
 }
 
 
 unsigned int Span::shortestSpan() const {
     if (this->arr.size() <= 1)
-        throw NoSpan();
+        throw std::logic_error("Error no span can be calculated !");
     std::vector<int> temp = this->arr;
     std::sort(temp.begin(), temp.end());
     long res = std::numeric_limits<long>::max();
@@ -65,16 +65,9 @@ unsigned int Span::shortestSpan() const {
 
 unsigned int Span::longestSpan() const {
     if (this->arr.size() <= 1)
-        throw NoSpan();
+        throw std::logic_error("Error no span can be calculated !");
     std::vector<int>::const_iterator max = std::max_element(this->arr.begin(), this->arr.end());
     std::vector<int>::const_iterator min = std::min_element(this->arr.begin(), this->arr.end());
     return (*max - *min);
 }
 
-const char* Span::NoSpan::what() const throw() {
-    return ("Error no span can be calculated !");
-}
-
-const char* Span::FullValues::what() const throw() {
-    return ("No space to add !");
-}
