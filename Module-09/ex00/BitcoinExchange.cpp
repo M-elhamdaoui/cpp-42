@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/10 14:06:13 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/10 14:54:33 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void BitcoinExchange::processFile(const char* filePath, const kv& database) {
     while (getline(file, line)) {
         try
         {
+            BitcoinExchange::validateCharacters(line, '|');
             int count = 0;
             std::string part;
             kv parsedFile;
@@ -75,6 +76,7 @@ void BitcoinExchange::processFile(const char* filePath, const kv& database) {
                 if (count == 0)
                 {
                     try {
+                        BitcoinExchange::validateCharacters(part, '-');
                         BitcoinExchange::extractDate(day, month, year, part);
                     } catch (const std::exception& e)
                     {
@@ -137,6 +139,20 @@ std::string BitcoinExchange::trim(const std::string& str) {
     std::string res =  str.substr(start, end);
     return res;
  }
+
+
+void BitcoinExchange::validateCharacters(const std::string& str, char c) {
+    int count = 0;
+    for (size_t i = 0; i < str.size(); i++)
+    {
+        if (str[i] == c)
+            count++;
+    }
+    if (c == '-' && count != 2)
+        throw std::logic_error(std::string("bad input => ") + str);
+    if (c == '|' && count != 1)
+         throw std::logic_error(std::string("bad input => ") + str);
+}
 
 // void BitcoinExchange::validateFormat(const std::string& str) {
 //     int count = 0;
