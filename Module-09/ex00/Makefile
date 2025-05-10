@@ -6,17 +6,17 @@
 #    By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/10 06:14:10 by mel-hamd          #+#    #+#              #
-#    Updated: 2025/05/10 06:14:47 by mel-hamd         ###   ########.fr        #
+#    Updated: 2025/05/10 08:52:36 by mel-hamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-name	= 
+name	= btc
 CC		= c++ 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADERS	= 
+HEADERS	= BitcoinExchange.hpp
 
-srcs	= main.cpp 
+srcs	= main.cpp BitcoinExchange.cpp
 
 objs	= $(srcs:.cpp=.o)
 
