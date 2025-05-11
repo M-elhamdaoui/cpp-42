@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/11 07:28:01 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/11 07:36:09 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ kv BitcoinExchange::loadDatabase() {
 void BitcoinExchange::processFile(const char* filePath, const kv& database) {
     std::fstream file(filePath);
     std::string line;
-    (void)database;
     if (!file)
         throw std::logic_error(std::string("Cant open file '") + std::string(filePath) + std::string("' !") );    
     getline(file, line);
