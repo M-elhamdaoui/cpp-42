@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/11 06:56:30 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/11 07:28:01 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,13 +104,13 @@ void BitcoinExchange::processFile(const char* filePath, const kv& database) {
                         throw std::logic_error(std::string("bad input => " + line));
                     if (part.find(".") == 0  || part.find('.', part.find('.') + 1) != std::string::npos)
                         throw std::logic_error(std::string("bad input => " + line));
+                    if (part > "9999" || (part.find('.') != std::string::npos && part.substr(part.find('.')) > "999"))
+                        throw std::logic_error(std::string(" too large a number."));
                     value = std::strtod(part.c_str(), NULL);
                     if (value > 1000)
                         throw std::logic_error(std::string(" too large a number."));
                     else if (value < 0)
                         throw std::logic_error(std::string(" not a positive number."));
-                    // if (part > "1000")
-                    //      throw std::logic_error(std::string(" too large a number."));
                     value = value * it->second;
                     std::cout  << it->first << " => " << part << " = " << std::fixed <<  std::setprecision(2) << value << std::endl; 
                 }
