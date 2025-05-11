@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/11 07:36:09 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/11 08:37:12 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void BitcoinExchange::processFile(const char* filePath, const kv& database) {
                         if (it != database.begin())
                             it--;
                         else
-                            throw std::logic_error(std::string("bad input => " + line));
+                            throw std::logic_error(std::string(" Data base is empty !"));
                     }
 
                 }
