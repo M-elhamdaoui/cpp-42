@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:43 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/10 15:43:00 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/11 06:56:41 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class BitcoinExchange {
         static void extractDate(int& day, int& month, int& year, const std::string& str);
         static std::string trim(const std::string& str);
         static void validateCharacters(const std::string& str, char c);
-        static void validateDateFormat(const std::string& str);
         static bool isLeapYear(const int& year);
         static bool isValidDate(const int& year, const int& month,const int& day);
         static void processFile(const char* filePath, const kv& database);

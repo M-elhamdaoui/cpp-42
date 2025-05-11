@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/10 16:31:49 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/11 06:56:30 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ void BitcoinExchange::processFile(const char* filePath, const kv& database) {
             BitcoinExchange::validateCharacters(line, '|');
             int count = 0;
             std::string part;
-            float baseVal;
+            double value;
+            std::map<std::string, float>::const_iterator it;
             std::stringstream ss(line);
             while (getline(ss, part, '|'))
             {
@@ -83,15 +84,39 @@ void BitcoinExchange::processFile(const char* filePath, const kv& database) {
                             if (e.what())
                                 throw std::logic_error(std::string("bad input => ") + line);
                     }
-                    if (BitcoinExchange::isValidDate(year, month, day))
-                        std::cout << part << " is valid !" << std::endl;
-                    else
+                    if (!BitcoinExchange::isValidDate(year, month, day))
                         throw std::logic_error(std::string("bad input => ") + line);
-                    // std::cout << year << "-" << month << "-" << day << std::endl; 
+                    it = database.lower_bound(part);
+                    if (it == database.end() || it->first !=  part)
+                    {
+                        if (it != database.begin())
+                            it--;
+                        else
+                            throw std::logic_error(std::string("bad input => " + line));
+                    }
+
+                }
+                if (count == 1)
+                {
+                    if (part.find_first_not_of("-0123456789.") != std::string::npos)
+                        throw std::logic_error(std::string("bad input => " + line));
+                    if (part.find_first_of('-') != 0 && part.find_first_of('-') != std::string::npos)
+                        throw std::logic_error(std::string("bad input => " + line));
+                    if (part.find(".") == 0  || part.find('.', part.find('.') + 1) != std::string::npos)
+                        throw std::logic_error(std::string("bad input => " + line));
+                    value = std::strtod(part.c_str(), NULL);
+                    if (value > 1000)
+                        throw std::logic_error(std::string(" too large a number."));
+                    else if (value < 0)
+                        throw std::logic_error(std::string(" not a positive number."));
+                    // if (part > "1000")
+                    //      throw std::logic_error(std::string(" too large a number."));
+                    value = value * it->second;
+                    std::cout  << it->first << " => " << part << " = " << std::fixed <<  std::setprecision(2) << value << std::endl; 
                 }
                 count++;
             }
-            if (count == 1)
+            if (count != 2)
                  throw std::logic_error(std::string("bad input => " + line));
         }
         catch(const std::exception& e)
@@ -186,12 +211,3 @@ bool BitcoinExchange::isLeapYear(const int& year) {
     }
     return (0);
 }
-
-// void BitcoinExchange::validateFormat(const std::string& str) {
-//     int count = 0;
-//     for (size_t i = 0 ; i < str.size() ; i++) {
-            
-//         if (str[i] == '|')
-//             count++;
-//     }
-// }
