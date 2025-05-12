@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/11 08:37:12 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/12 06:41:08 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void BitcoinExchange::processFile(const char* filePath, const kv& database) {
                         throw std::logic_error(std::string("bad input => " + line));
                     if (part.find_first_of('-') != 0 && part.find_first_of('-') != std::string::npos)
                         throw std::logic_error(std::string("bad input => " + line));
-                    if (part.find(".") == 0  || part.find('.', part.find('.') + 1) != std::string::npos)
+                    if (part.find(".") == 0 || part.find('.') == part.size() - 1 || part.find('.', part.find('.') + 1) != std::string::npos)
                         throw std::logic_error(std::string("bad input => " + line));
                     if (part > "9999" || (part.find('.') != std::string::npos && part.substr(part.find('.')) > "999"))
                         throw std::logic_error(std::string(" too large a number."));
@@ -191,9 +191,9 @@ bool BitcoinExchange::isValidDate(const int& year, const int& month,const int& d
         return (false);
     if (year == 2009 && month == 1 && day < 2)
         return (false);
-    if (month == 2 && day > 29)
+    if (!BitcoinExchange::isLeapYear(year) && month == 2 && day > 28)
         return (false);
-    if (BitcoinExchange::isLeapYear(year) && month == 2 && day > 28)
+    if (BitcoinExchange::isLeapYear(year) && month == 2 && day > 29)
         return (false);
     if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
         return (false);
