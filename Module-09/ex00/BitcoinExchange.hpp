@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:43 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/11 06:56:41 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/15 12:44:50 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <map>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 
 typedef std::map<std::string, float > kv;
 
