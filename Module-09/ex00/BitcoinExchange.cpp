@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/12 06:41:08 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/15 12:43:55 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ kv BitcoinExchange::loadDatabase() {
         std::stringstream ss(line);
         getline(ss,first, ',');
         getline(ss,second, ',');
-        res.insert(std::make_pair(first, std::strtof(second.c_str(), &ptr)));
+        res[first] = std::strtof(second.c_str(), &ptr);
      }
      file.close();
     return res; 
