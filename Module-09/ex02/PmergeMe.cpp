@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:40 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/16 11:52:46 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/16 16:47:49 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ void fill(std::vector<int>& vec, std::deque<int>& deq, char** av, int& ac) {
 }
 
 void printPairNum(std::vector<int> arr, size_t n, int level) {
-    if (n > (arr.size() / 2))
+    if (n > (arr.size() / 2) && n != 2)
+        return ;
+    if (n == 2 && arr.size() < 2)
         return ;
     std::cout << level <<  " number of number in each pair : " << n <<std::endl;
     printPairNum(arr, n * 2, level + 1);
