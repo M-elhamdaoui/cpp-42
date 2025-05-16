@@ -6,11 +6,14 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:40 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/15 17:40:39 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/16 11:52:46 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+
+
+
 
 
 bool check_valid(char *str) {
@@ -18,9 +21,16 @@ bool check_valid(char *str) {
 
     if (test.find_first_not_of("+1234567890") != std::string::npos)
         return (1);
-    if (test.size() > 12)
+    if (test.size() > 1 && (test.find('+') != std::string::npos && test.find_last_of('+') != 0))
         return (1);
-    if (test.size() > 1 && (test.find('+') != std::string::npos && test.find('+') != 0))
+    if (test.size() == 0)
+        return (1);
+    if (test.size()  == 1 && test == "+")
+        return (1);
+    std::string check  = "-1";
+    if (test.find_first_not_of("+0") != std::string::npos)
+        std::string check = test.substr(test.find_first_not_of("+0"), std::distance(test.begin() + test.find_first_not_of("+0"), test.end()));
+    if (check != "-1" && check.size() > 12)
         return (1);
     return (0);
 }
@@ -32,14 +42,22 @@ void fill(std::vector<int>& vec, std::deque<int>& deq, char** av, int& ac) {
         if (check_valid(av[i]))
             throw std::logic_error("Invalid Argument !");
         res = std::strtol(av[i],NULL, 10);
+        if (res > std::numeric_limits<int>::max())
+            throw std::logic_error("Invalid Argument !");
         vec.push_back(res);
         deq.push_back(res);
         i++;
     }
 }
 
+void printPairNum(std::vector<int> arr, size_t n, int level) {
+    if (n > (arr.size() / 2))
+        return ;
+    std::cout << level <<  " number of number in each pair : " << n <<std::endl;
+    printPairNum(arr, n * 2, level + 1);
+}
+
 std::vector<int> sortVector(std::vector<int> arr) {
-    for(std::vector<int>::iterator it; it != arr.end(); it++) {
-        std::cout << *it << std::endl;
-    }
+    printPairNum(arr, 2, 1);
+    return (arr);
 }
