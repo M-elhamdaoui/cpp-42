@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:40 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/16 16:47:49 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/17 06:47:31 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,17 @@ void printPairNum(std::vector<int> arr, size_t n, int level) {
         return ;
     if (n == 2 && arr.size() < 2)
         return ;
+    size_t s = 0;
+    while (s + n - 1 < arr.size())
+    {
+        std::vector<int> a(arr.begin() + s , arr.begin() + s + n / 2);
+        std::vector<int> b(arr.begin() + s + n / 2 , arr.begin() + s + n);
+        std::cout << "a : " ;
+        print(a);
+        std::cout << "b : " ;
+        print(b);
+        s+=n;
+    }
     std::cout << level <<  " number of number in each pair : " << n <<std::endl;
     printPairNum(arr, n * 2, level + 1);
 }
