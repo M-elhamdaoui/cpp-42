@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:40 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/18 14:04:44 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/18 14:07:05 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,12 +117,12 @@ void printPairNum(std::vector<int>& arr, size_t n, int level) {
     }
     // std::cout<< "Sequence : " << pend_chain.size() << "  ... ";
     // print(seq);
-    std::cout << std::endl;
+    // std::cout << std::endl;
     // std::cout << "After : ";
     // print(arr);
-    std::cout << std::endl;
-    std::cout << "Main chain : ";
-    print_multi(main_chain);
+    // std::cout << std::endl;
+    // std::cout << "Main chain : ";
+    // print_multi(main_chain);
     // std::cout << std::endl;
     // std::cout << "Pen chain : ";
     // print_multi(pend_chain);
@@ -133,19 +133,19 @@ void printPairNum(std::vector<int>& arr, size_t n, int level) {
     size_t lenth = 0;
     size_t i = 0;
     std::vector<size_t> seq = generate_jacob_sequence(pend_chain.size() + 1);
-     std::cout << std::endl;
-    std::cout << "----------------\nMain chain : ";
-    print_multi(main_chain);
-    std::cout << std::endl;
-    std::cout << "----------------\nPend chain : ";
-    print_multi(pend_chain);
+    //  std::cout << std::endl;
+    // std::cout << "----------------\nMain chain : ";
+    // print_multi(main_chain);
+    // std::cout << std::endl;
+    // std::cout << "----------------\nPend chain : ";
+    // print_multi(pend_chain);
     while (lenth != pend_chain.size())
     {
         size_t index = seq[i++];
-        std::cout << index << std::endl;
+        // std::cout << index << std::endl;
         if (index - 2 >= pend_chain.size())
         {
-            std::cout << "Skip " << index;
+            // std::cout << "Skip " << index;
             continue;
         }
         binary_insert(index + lenth, main_chain, pend_chain[index - 2]);
@@ -187,14 +187,14 @@ void binary_insert(size_t index, std::vector<std::vector<int> >& main_chain, std
 }
 
 std::vector<int> sortVector(std::vector<int> arr) {
-    // std::cout << "Before : ";
-    // print(arr);
-    // std::cout << std::endl;
+    std::cout << "Before : ";
+    print(arr);
+    std::cout << std::endl;
     // generate_jacob_sequence(2);
     printPairNum(arr, 1, 1); 
-    // std::cout << "After : ";
-    // print(arr);
-    // std::cout << std::endl;
+    std::cout << "After : ";
+    print(arr);
+    std::cout << std::endl;
     return (arr);
 }
 
