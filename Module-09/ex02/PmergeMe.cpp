@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:40 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/17 06:47:31 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/17 10:51:06 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,23 +50,63 @@ void fill(std::vector<int>& vec, std::deque<int>& deq, char** av, int& ac) {
     }
 }
 
-void printPairNum(std::vector<int> arr, size_t n, int level) {
-    if (n > (arr.size() / 2) && n != 2)
+void printPairNum(std::vector<int>& arr, size_t n, int level) {
+    if (n - 1 > (arr.size() / 2) && n != 2)
         return ;
     if (n == 2 && arr.size() < 2)
         return ;
+    std::cout << level <<  " number of number in each pair : " << n <<std::endl;
     size_t s = 0;
-    while (s + n - 1 < arr.size())
+    std::vector<std::vector<int> > main_chain;
+    std::vector<std::vector<int> > pend_chain;
+    std::vector<std::vector<int> > resualt_chain;
+    std::vector<int> rest;
+    std::cout << "Before : ";
+    print(arr);
+    std::cout << std::endl;
+    while (s + n <= arr.size())
     {
         std::vector<int> a(arr.begin() + s , arr.begin() + s + n / 2);
         std::vector<int> b(arr.begin() + s + n / 2 , arr.begin() + s + n);
-        std::cout << "a : " ;
-        print(a);
-        std::cout << "b : " ;
-        print(b);
+        if (a.back() > b.back())
+        {
+            for (size_t j = 0; j < b.size(); j++)
+            {
+                arr[s + j] = b[j];
+                arr[s + n / 2 + j] = a[j];
+            }
+        }
+        a = std::vector<int>(arr.begin() + s , arr.begin() + s + n / 2);
+        b = std::vector<int>(arr.begin() + s + n / 2 , arr.begin() + s + n);
+        if (a.back() < b.back())
+        {
+            if (s == 0)
+                main_chain.push_back(a);
+            else
+                pend_chain.push_back(a);
+            main_chain.push_back(b);
+        }
+        else {
+            if (s == 0)
+                main_chain.push_back(b);
+            else
+                pend_chain.push_back(b);
+            main_chain.push_back(a);
+         }
         s+=n;
     }
-    std::cout << level <<  " number of number in each pair : " << n <<std::endl;
+    // std::cout << "After : ";
+    // print(arr);
+    // std::cout << std::endl;
+    if (s < arr.size())
+        rest = std::vector<int>(arr.begin() + s, arr.end());
+    // std::cout << "Main chain : ";
+    // print_multi(main_chain);
+    // std::cout << "Pen chain : ";
+    // print_multi(pend_chain);
+    // std::cout << "Rest : ";
+    // print(rest);
+    // std::cout << std::endl;
     printPairNum(arr, n * 2, level + 1);
 }
 

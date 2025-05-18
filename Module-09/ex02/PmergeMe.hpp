@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:43 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/16 09:56:24 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/17 10:24:11 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,24 @@ void print(const T& arr) {
         std::cout << arr[i];
         if (i != arr.size() - 1)
             std::cout << ", ";
+        i++;
+    }
+}
+
+template <typename T>
+void print_multi(const T& arr) {
+    size_t i = 0;
+    
+    while(i < arr.size())
+    {
+        print(arr[i]);
+        if (i != arr.size() - 1)
+            std::cout << " | ";
         else
             std::cout << std::endl;
         i++;
     }
+    std::cout << std::endl;
 }
 
 bool check_valid(char *str);
