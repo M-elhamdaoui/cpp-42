@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:43 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/18 07:08:34 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/18 13:07:53 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void print_multi(const T& arr) {
     std::cout << std::endl;
 }
 
+void binary_insert(size_t index, std::vector<std::vector<int> >& main_chain, std::vector<int> elem);
+std::vector<size_t> generate_jacob_sequence(size_t number);
 bool check_valid(char *str);
 void fill(std::vector<int>& vec, std::deque<int>& deq, char** av, int& ac);
 void check_input_valid(char**& av,int ac);
