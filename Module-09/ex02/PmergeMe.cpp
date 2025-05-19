@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:40 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/19 06:59:10 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/19 07:04:08 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void fill(std::vector<int>& vec, std::deque<int>& deq, char** av, int& ac) {
         res = std::strtol(av[i],NULL, 10);
         if (res > std::numeric_limits<int>::max())
             throw std::logic_error("Invalid Argument !");
+        if (std::find(vec.begin(), vec.end(), res) != vec.end())
+            throw std::logic_error("Invalid Argument duplicated !");
         vec.push_back(res);
         deq.push_back(res);
         i++;
