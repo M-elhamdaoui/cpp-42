@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:40 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/19 07:04:08 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/19 09:50:14 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,13 +154,7 @@ void binary_insert(size_t index, std::vector<std::vector<int> >& main_chain, std
 }
 
 std::vector<int> sortVector(std::vector<int> arr) {
-    std::cout << "Before : ";
-    print(arr);
-    std::cout << std::endl;
     sortNums(arr, 1, 1); 
-    std::cout << "After : ";
-    print(arr);
-    std::cout << std::endl;
     return (arr);
 }
 
@@ -268,13 +262,7 @@ void binary_insert(size_t index, std::deque<std::deque<int> >& main_chain, std::
 }
 
 std::deque<int> sortDeque(std::deque<int> arr) {
-    std::cout << "Before : ";
-    print(arr);
-    std::cout << std::endl;
     sortNums(arr, 1, 1); 
-    std::cout << "After : ";
-    print(arr);
-    std::cout << std::endl;
     return (arr);
 }
 
