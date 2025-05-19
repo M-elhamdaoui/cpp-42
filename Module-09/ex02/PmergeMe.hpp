@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:43 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/19 06:47:32 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/19 07:56:14 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <limits>
 #include <algorithm> 
+#include <ctime>
 
 
 template <typename T>
