@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:40 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/18 14:07:05 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/19 06:30:53 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,9 +139,18 @@ void printPairNum(std::vector<int>& arr, size_t n, int level) {
     // std::cout << std::endl;
     // std::cout << "----------------\nPend chain : ";
     // print_multi(pend_chain);
+        // std::cout << "Sequence : ";
+        // print(seq);
+        // std::cout << std::endl;
+        // std::cout << "pend chain : ";
+        // print_multi(pend_chain);
     while (lenth != pend_chain.size())
     {
-        size_t index = seq[i++];
+        size_t index;
+        if (seq.size() == 1)
+            index = 2;
+        else
+            index  = seq[i++];
         // std::cout << index << std::endl;
         if (index - 2 >= pend_chain.size())
         {
@@ -177,7 +186,7 @@ void binary_insert(size_t index, std::vector<std::vector<int> >& main_chain, std
     size_t mid = (end + start) / 2;
     while (start < end)
     {
-        if (main_chain[mid].back() < elem.back())
+        if (main_chain[mid][main_chain[mid].size() - 1] < elem[elem.size() - 1])
             start = mid + 1;
         else
             end = mid;
