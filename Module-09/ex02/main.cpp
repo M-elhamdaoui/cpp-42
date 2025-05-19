@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:35 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/17 09:07:49 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/19 06:50:41 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main(int ac, char** av) {
         // print(vec);
         // print(deq);
         sortVector(vec);
+        sortDeque(deq);
     }
     catch(const std::exception& e)
     {

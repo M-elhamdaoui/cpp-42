@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:40 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/19 06:30:53 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/19 06:51:01 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void fill(std::vector<int>& vec, std::deque<int>& deq, char** av, int& ac) {
     }
 }
 
-void printPairNum(std::vector<int>& arr, size_t n, int level) {
+void sortNums(std::vector<int>& arr, size_t n, int level) {
     if (n * 2 > arr.size() && n != 2)
         return ;
     if (n == 2 && arr.size() < 2)
@@ -58,11 +58,7 @@ void printPairNum(std::vector<int>& arr, size_t n, int level) {
     size_t s = 0;
     std::vector<std::vector<int> > main_chain;
     std::vector<std::vector<int> > pend_chain;
-    std::vector<std::vector<int> > resualt_chain;
     std::vector<int> rest;
-    // std::cout << level << " Before : ";
-    // print(arr);
-    // std::cout << std::endl;
     while (s + (2 * n) <= arr.size())
     {
         std::vector<int> a(arr.begin() + s , arr.begin() + s + n);
@@ -77,11 +73,7 @@ void printPairNum(std::vector<int>& arr, size_t n, int level) {
         }
         s+= n * 2;
     }
-    // std::cout  << level << " After : ";
-    // print(arr);
-    // std::cout << std::endl;
-    printPairNum(arr, n * 2, level + 1);
-    // std::cout << level <<  " number of number in each pair : " << n <<std::endl;
+    sortNums(arr, n * 2, level + 1);
     s = 0;
     while (s + (2 * n) <= arr.size())
     {
@@ -115,35 +107,9 @@ void printPairNum(std::vector<int>& arr, size_t n, int level) {
         }
         return ;
     }
-    // std::cout<< "Sequence : " << pend_chain.size() << "  ... ";
-    // print(seq);
-    // std::cout << std::endl;
-    // std::cout << "After : ";
-    // print(arr);
-    // std::cout << std::endl;
-    // std::cout << "Main chain : ";
-    // print_multi(main_chain);
-    // std::cout << std::endl;
-    // std::cout << "Pen chain : ";
-    // print_multi(pend_chain);
-    // std::cout << std::endl;
-    // std::cout << "Rest : ";
-    // print(rest);
-    // std::cout << std::endl;
     size_t lenth = 0;
     size_t i = 0;
-    std::vector<size_t> seq = generate_jacob_sequence(pend_chain.size() + 1);
-    //  std::cout << std::endl;
-    // std::cout << "----------------\nMain chain : ";
-    // print_multi(main_chain);
-    // std::cout << std::endl;
-    // std::cout << "----------------\nPend chain : ";
-    // print_multi(pend_chain);
-        // std::cout << "Sequence : ";
-        // print(seq);
-        // std::cout << std::endl;
-        // std::cout << "pend chain : ";
-        // print_multi(pend_chain);
+    std::vector<size_t> seq = generate_jacob_sequence<std::vector<size_t> >(pend_chain.size() + 1);
     while (lenth != pend_chain.size())
     {
         size_t index;
@@ -151,19 +117,9 @@ void printPairNum(std::vector<int>& arr, size_t n, int level) {
             index = 2;
         else
             index  = seq[i++];
-        // std::cout << index << std::endl;
         if (index - 2 >= pend_chain.size())
-        {
-            // std::cout << "Skip " << index;
             continue;
-        }
         binary_insert(index + lenth, main_chain, pend_chain[index - 2]);
-        // std::cout << std::endl;
-        // std::cout << "Main chain : ";
-        // print_multi(main_chain);
-        // std::cout << "Pend chain : ";
-        // print_multi(pend_chain);
-
         lenth++;
     }
     main_chain.push_back(rest);
@@ -199,36 +155,126 @@ std::vector<int> sortVector(std::vector<int> arr) {
     std::cout << "Before : ";
     print(arr);
     std::cout << std::endl;
-    // generate_jacob_sequence(2);
-    printPairNum(arr, 1, 1); 
+    sortNums(arr, 1, 1); 
     std::cout << "After : ";
     print(arr);
     std::cout << std::endl;
     return (arr);
 }
 
-std::vector<size_t> generate_jacob_sequence(size_t number) {
-    std::vector<size_t> seq;
-    std::vector<size_t> res;
-    seq.push_back(0);
-    seq.push_back(1);
-    seq.push_back(1);
-    for (size_t i = 3; i <= number ; i++)
-        seq.push_back(seq[i - 1] + (2 *seq[i - 2]));
-    int prev =  0;
-    for (std::vector<size_t>::iterator it = seq.begin(); it != seq.end(); it++)
+// deque 
+
+void sortNums(std::deque<int>& arr, size_t n, int level) {
+    if (n * 2 > arr.size() && n != 2)
+        return ;
+    if (n == 2 && arr.size() < 2)
+        return ;
+    size_t s = 0;
+    std::deque<std::deque<int> > main_chain;
+    std::deque<std::deque<int> > pend_chain;
+    std::deque<int> rest;
+    while (s + (2 * n) <= arr.size())
     {
-        if (*it != 1 && *it != 0)
+        std::deque<int> a(arr.begin() + s , arr.begin() + s + n);
+        std::deque<int> b(arr.begin() + s + n , arr.begin() + s + (n * 2));
+        if (a.back() > b.back())
         {
-            for (int s = *it; s != prev ; s--)
-                 res.push_back(s);
+            for (size_t j = 0; j < b.size(); j++)
+            {
+                arr[s + j] = b[j];
+                arr[s + n + j] = a[j];
+            }
         }
-        if (res.size() > number)
-            break;
-        prev = *it;
+        s+= n * 2;
     }
-    if (number == 1 || number == 2)
-        res.push_back(1);
-    // print(res);
-    return (res);
+    sortNums(arr, n * 2, level + 1);
+    s = 0;
+    while (s + (2 * n) <= arr.size())
+    {
+        std::deque<int >a = std::deque<int>(arr.begin() + s , arr.begin() + s + n);
+        std::deque<int> b = std::deque<int>(arr.begin() + s + n , arr.begin() + s + (n * 2));
+        if (s == 0)
+            main_chain.push_back(a);
+        else
+            pend_chain.push_back(a);
+        main_chain.push_back(b);
+        s += n * 2;
+    }
+    if (s + n <= arr.size())
+    {
+         std::deque<int >a = std::deque<int>(arr.begin() + s , arr.begin() + s + n);
+        pend_chain.push_back(a);
+        s += n;
+    }
+    if (s < arr.size())
+        rest = std::deque<int>(arr.begin() + s, arr.end());
+    if (pend_chain.size() == 0 && main_chain.size() != 0){
+        size_t index = 0;
+        for(std::deque<std::deque<int> >::iterator it = main_chain.begin() ; it != main_chain.end(); it++)
+        {
+            std::copy(it->begin() , it->end(), arr.begin() + index);
+            index += it->size();
+        }
+        if (rest.size())
+        {
+            std::copy(rest.begin() , rest.end(), arr.begin() + index);
+        }
+        return ;
+    }
+    size_t lenth = 0;
+    size_t i = 0;
+    std::deque<size_t> seq = generate_jacob_sequence<std::deque<size_t> >(pend_chain.size() + 1);
+    while (lenth != pend_chain.size())
+    {
+        size_t index;
+        if (seq.size() == 1)
+            index = 2;
+        else
+            index  = seq[i++];
+        if (index - 2 >= pend_chain.size())
+            continue;
+        binary_insert(index + lenth, main_chain, pend_chain[index - 2]);
+        lenth++;
+    }
+    main_chain.push_back(rest);
+    size_t copy = 0;
+    for (std::deque<std::deque<int> >::iterator it = main_chain.begin(); it != main_chain.end(); it++)
+    {
+        for (std::deque<int>::iterator t = it->begin(); t != it->end(); t++)
+            arr[copy++] = *t;
+    }
+        
 }
+
+void binary_insert(size_t index, std::deque<std::deque<int> >& main_chain, std::deque<int> elem
+) {
+
+    size_t end = index;
+    if (end > main_chain.size())
+        end = main_chain.size();
+    size_t start = 0;
+    size_t mid = (end + start) / 2;
+    while (start < end)
+    {
+        if (main_chain[mid][main_chain[mid].size() - 1] < elem[elem.size() - 1])
+            start = mid + 1;
+        else
+            end = mid;
+        mid = (end + start) / 2;
+    }
+    main_chain.insert(main_chain.begin() + start, elem);
+}
+
+std::deque<int> sortDeque(std::deque<int> arr) {
+    std::cout << "Before : ";
+    print(arr);
+    std::cout << std::endl;
+    sortNums(arr, 1, 1); 
+    std::cout << "After : ";
+    print(arr);
+    std::cout << std::endl;
+    return (arr);
+}
+
+
+
