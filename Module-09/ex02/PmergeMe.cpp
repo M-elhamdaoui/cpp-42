@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:40 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/19 06:51:01 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/19 06:59:10 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void sortNums(std::vector<int>& arr, size_t n, int level) {
     {
         std::vector<int> a(arr.begin() + s , arr.begin() + s + n);
         std::vector<int> b(arr.begin() + s + n , arr.begin() + s + (n * 2));
-        if (a.back() > b.back())
+        if (a[a.size() - 1] > b[b.size() - 1])
         {
             for (size_t j = 0; j < b.size(); j++)
             {
@@ -177,7 +177,7 @@ void sortNums(std::deque<int>& arr, size_t n, int level) {
     {
         std::deque<int> a(arr.begin() + s , arr.begin() + s + n);
         std::deque<int> b(arr.begin() + s + n , arr.begin() + s + (n * 2));
-        if (a.back() > b.back())
+        if (a[a.size() - 1] > b[b.size() - 1])
         {
             for (size_t j = 0; j < b.size(); j++)
             {
