@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/15 12:43:55 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/19 08:25:48 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ kv BitcoinExchange::loadDatabase() {
     if (!file)
         throw std::logic_error("Can't locate or open data.csv !");
     getline(file, line);
+    if (line != "date,exchange_rate") 
+        throw std::logic_error("Can't handle this database !");
     while (getline(file, line))
      {
         char *ptr;
