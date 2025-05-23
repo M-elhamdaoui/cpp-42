@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 06:33:50 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/19 08:25:48 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/19 11:26:16 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,15 @@ kv BitcoinExchange::loadDatabase() {
 void BitcoinExchange::processFile(const char* filePath, const kv& database) {
     std::fstream file(filePath);
     std::string line;
+    std::string date;
     if (!file)
         throw std::logic_error(std::string("Cant open file '") + std::string(filePath) + std::string("' !") );    
     getline(file, line);
     if (line != "date | value")
         throw std::logic_error("Invalid header in file !");
     while (getline(file, line)) {
+        if (line.size() == 0)
+            continue;
         try
         {
             BitcoinExchange::validateCharacters(line, '|');
@@ -69,6 +72,12 @@ void BitcoinExchange::processFile(const char* filePath, const kv& database) {
             std::stringstream ss(line);
             while (getline(ss, part, '|'))
             {
+                if (count == 0 && (part.size() != 11 || (part.size() > 0 && part[part.size() - 1] != ' ')))
+                     throw std::logic_error(std::string("bad input s=> ") + line);
+                if (count == 1 && (part.size() < 2 ||  part[0] != ' '))
+                     throw std::logic_error(std::string("bad input d=> ") + line);
+                if (count == 1 && part.find_last_of(" ") != 0)
+                    throw std::logic_error(std::string("bad input f=> ") + line);
                 part = BitcoinExchange::trim(part);
                 int day = 0;
                 int month = 0; 
@@ -80,6 +89,7 @@ void BitcoinExchange::processFile(const char* filePath, const kv& database) {
                     try {
                         BitcoinExchange::validateCharacters(part, '-');
                         BitcoinExchange::extractDate(day, month, year, part);
+                        date = part;
                     } catch (const std::exception& e)
                     {
                             if (e.what())
@@ -113,7 +123,7 @@ void BitcoinExchange::processFile(const char* filePath, const kv& database) {
                     else if (value < 0)
                         throw std::logic_error(std::string(" not a positive number."));
                     value = value * it->second;
-                    std::cout  << it->first << " => " << part << " = " << std::fixed <<  std::setprecision(2) << value << std::endl; 
+                    std::cout  << date << " => " << part << " = " << std::fixed <<  std::setprecision(2) << value << std::endl; 
                 }
                 count++;
             }

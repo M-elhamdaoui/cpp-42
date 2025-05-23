@@ -6,7 +6,7 @@
 /*   By: mel-hamd <mel-hamd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:48:43 by mel-hamd          #+#    #+#             */
-/*   Updated: 2025/05/19 07:56:14 by mel-hamd         ###   ########.fr       */
+/*   Updated: 2025/05/19 09:59:45 by mel-hamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void binary_insert(size_t index, std::vector<std::vector<int> >& main_chain, std
 std::vector<size_t> generate_jacob_sequence(size_t number);
 bool check_valid(char *str);
 void fill(std::vector<int>& vec, std::deque<int>& deq, char** av, int& ac);
-std::vector<std::pair<int, int> > generatePairs(std::vector<int> arr);
 std::vector<int> sortVector(std::vector<int> arr);
 void sortNums(std::vector<int>& arr, size_t n, int level);
 
